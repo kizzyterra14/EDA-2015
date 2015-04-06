@@ -1,0 +1,3660 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\renewcommand \thefigure{Figura~\@arabic\c@figure}
+\def\fps@figure{tbp}
+\def\ftype@figure{1}
+\def\ext@figure{lof}
+\def\fnum@figure{\thefigure}
+\renewcommand \thealgorithm{Implementação~\@arabic\c@algorithm}
+\def\fps@algorithm{tbp}
+\def\ftype@algorithm{1}
+\def\ext@algorithm{lof}
+\def\fnum@algorithm{\thealgorithm}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 3cm
+\rightmargin 3cm
+\bottommargin 2.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+FUNDAÇÃO GETÚLIO VARGAS
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+ESCOLA DE MATEMÁTICA APLICADA
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+MESTRADO 2015.1
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+ESTRUTURA DE DADOS E SEUS ALGORITMOS
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+Prof Alexandre Rademaker
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+Resolução dos Exercícios Selecionandos dos Capítulos 1 e 2
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+GRUPO:
+\end_layout
+
+\begin_layout Standard
+\align center
+KIZZY TERRA
+\end_layout
+
+\begin_layout Standard
+\align center
+GUSTAVO AVILA
+\end_layout
+
+\begin_layout Standard
+\align center
+CAROLINE FIALHO
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+RIO DE JANEIRO
+\end_layout
+
+\begin_layout Standard
+\align center
+MARÇO DE 2015
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Implementação dos algoritmos discutidos em sala
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Os algoritmos a seguir foram implementados em Python:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+def multiply1(x, y): # y>= 0 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+if y == 0: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+return 0 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+else: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+z = multiply1(x, y//2) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+if y%2 == 0: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+return 2*z 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+else: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+return x + 2*z
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Multiplicação a la Francais
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\size footnotesize
+def shiftright(x, s): 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+while s > 0: 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+x *=10 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+s = s-1 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+return x
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+def multiply(x, y): 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+if x == 0 or y == 1: 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+return x 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+if y == 0 or x == 1: 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+return y 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+else: 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+x_digits = str(x) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+y_digits = str(y) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+n_x = 0 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+n_y = 0 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+res = 0 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+for n_y in range(0, len(y_digits)): 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+res_partial = 0 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+for n_x in range(0, len(x_digits)):
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 1.6cm
+\end_inset
+
+
+\size scriptsize
+current = shiftright(int(y_digits[len(y_digits) - 1 - n_y])*int(x_digits[len(x_d
+igits) - 1 - n_x]), n_x + n_y)
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 1.6cm
+\end_inset
+
+res_partial += current
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 1.6cm
+\end_inset
+
+n_x +=1 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+res += res_partial 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+n_y += 1 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+return res
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Multiplicação Tradicional
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+def splitNumber(x):
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+x_digits = str(x) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+x_numberOfDigits = len(x_digits) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+p = int( x_digits[:x_numberOfDigits/2]) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+q = int( x_digits[x_numberOfDigits/2:]) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+return (x_numberOfDigits, p, q) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+def karatsuba(x, y): 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+if x<10 and y<10: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+return x*y 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+else: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+(x_numberOfDigits, p ,q ) = splitNumber(x) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+(y_numberOfDigits, r, s) = splitNumber(y) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+if x_numberOfDigits%2 == 0: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+n = x_numberOfDigits 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+else: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+n = x_numberOfDigits + 1 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+i = karatsuba(p, r) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+j = karatsuba(q, s) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+k = karatsuba( (p+q), (r+s)) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+res = shiftright(i, n) + j + shiftright(k - i - j, n/2) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+return res 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Karatsuba
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Implementações MergeSort
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Os algoritmos a seguir foram implementados em Python:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+def merge(x, y): 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+if len(x) == 0: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+return y 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+if len(y) == 0: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+return x 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+if x[0] <= y[0]: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+return [x[0]] + merge(x[1:], y) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+else: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+return [y[0]] + merge(x, y[1:])
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Merge (função auxilar para o MergeSort)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+import Queue 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+def mergesort_iterativo(x): 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+q = Queue.Queue() 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+for i in range(0, len(x)): 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+q.put([x[i]]) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+i = i + 1 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+while q.qsize() > 1: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+q.put(merge(q.get(), q.get())) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+return q.get()
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+MergeSort Iterativo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+def mergesort(x): 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+if len(x) > 1: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+return merge(mergesort(x[0:len(x)/2]), mergesort(x[len(x)/2:len(x)])) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+else: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+return x
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+MergeSort Recursivo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Pilhas e filas com listas encadeadas ou arrays
+\end_layout
+
+\begin_layout Standard
+Para a resolução das questões a seguir considera-se os seguintes conceitos:
+\end_layout
+
+\begin_layout Standard
+Lista encadeada: É uma estrutura dinâmica composta por células que apontam
+ para o próximo elemento da lista.
+ A lista encadeada é acessada através de seu primerio elemento e seu último
+ elemento aponta para um elemento nulo.
+ Os custos das operações básicas nesta estrutura são:
+\end_layout
+
+\begin_layout Standard
+1) Inserção: O(1)
+\end_layout
+
+\begin_layout Standard
+2) Remoção: O(n)
+\end_layout
+
+\begin_layout Standard
+3) Acesso aleatório: O(n)
+\end_layout
+
+\begin_layout Standard
+Array: É uma estrutura de dados que armazena uma coleção de elementos de
+ tal forma que cada um dos elementos possa ser identificado por, pelo menos,
+ um índice ou uma chave.
+ Os custos das operações básicas nesta estrutura são
+\end_layout
+
+\begin_layout Standard
+1) Inserção: O(n)
+\end_layout
+
+\begin_layout Standard
+2) Remoção: O(n)
+\end_layout
+
+\begin_layout Standard
+3) Acesso aleatório: O(1)
+\end_layout
+
+\begin_layout Subsection
+Pilhas utilizando Lista Encadeada
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uma vez que em uma estrutura de pilha temos a propriedade "Last In, First
+ Out" implementá-la utilizando lista encadeada tem a vantagem de realizar
+ as operações POP e PUSH em O(1); visto que em uma lista encadeada as operações
+ de inserção e a remoção na "cabeça" da lista tem cutso constante.
+\end_layout
+
+\begin_layout Subsection
+Pilhas utilizando Arrays
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se utilizarmos um array para implementar uma pilha de forma a inserir e
+ remover os elementos da pilha no início do array, as operações POP e PUSH
+ terão custo O(n) opção dsvantajosa em relação a implementação utilizando
+ lista encadeada.
+ Entretanto, é possível implementar a pilha inserindo e removendo os elementos
+ no final do array, para isso basta possuir uma variável a qual armzena
+ a informação da posição do último elemento e assim, as operações de inserção
+ (PUSH) e remoção(POP) na pilha passam a ter um custo constante O(1).
+\end_layout
+
+\begin_layout Subsection
+Filas utilizando Lista Encadeada
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As filas possuem a propriedade "First In, First Out", por essa razão o custo
+ de remoção (POP) em uma fila implementada utilizando-se lista encadeada
+ é O(n), dado que é preciso percorrer toda a lista para remover o último
+ elemento.
+ A operação de inserção (PUSH), por sua vez, tem custo O(1).
+\end_layout
+
+\begin_layout Subsection
+Filas utilizando Arrays
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Considerando uma implementação de fila utilizando array de forma a inserir
+ os elementos da fila no início do array e remover os elementos do final,
+ a operação de inserção (PUSH) terá custo O(n), ao passo que a operação
+ de remoção (POP) terá custo constante O(1).
+\end_layout
+
+\begin_layout Section
+Exercício 2.1 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $x.y=2^{n}x_{L}.y_{L}+2^{n/2}(x_{L}.y_{R}+x_{R}.y_{L})+x_{R}.y_{R}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $x=10011011$
+\end_inset
+
+ , 
+\begin_inset Formula $y=10111010$
+\end_inset
+
+ e
+\begin_inset Formula $n=8:$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $x.y=2^{8}(1001).(1011)+2^{n/2}((1001).(1010)+(1011).(1011))+(1011).(1010)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $x.y=2^{8}(1001).(1011)+2^{4}[(1001+1011).(1011+1010)-(1001).(1011)-(1011).(1010)]+(1011).(1010)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $x.y=2^{8}\mathbf{(1001).(1011)}+2^{4}[\mathbf{(10100).(10101)}-(1001).(1011)-(1011).(1010)]+\mathbf{(1011).(1010)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1) Calculando 
+\begin_inset Formula $\mathbf{(1001).(1011)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(1001).(1011)=2^{4}(10).(10)+2^{2}[(10+01).(10+11)-(10).(10)-(01).(11)]+(01).(11)=2^{4}\mathbf{(10).(10)}+2^{2}[\mathbf{(11).(101)}-(10).(10)-(01).(11)]+\mathbf{(01).(11)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+1.1) Calculando 
+\begin_inset Formula $\mathbf{(10).(10)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+
+\begin_inset Formula $(10).(10)=2^{2}(1).(1)+2[(1+0).(1+0)-(1).(1)-(0).(0)]+(0).(0)=2^{2}.1+2.(1-1-0)+0=100+2.0+0=100$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+1.2) Calculando 
+\begin_inset Formula $\mathbf{(01).(11)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+
+\begin_inset Formula $(01).(11)=2^{2}(0).(1)+2[(0+1).(1+1)-(0).(1)-(1).(1)]+(1).(1)=2^{2}.0+2.(10-0-1)+1=2.(1)+1=10+1=11$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+1.3) Calculando 
+\begin_inset Formula $\mathbf{(11).(101)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+
+\begin_inset Formula $(0011).(0101)=2^{4}(00).(01)+2^{2}[(00+11).(01+01)-(00).(01)-(11).(01)]+(11).(01)=2^{4}\mathbf{(00).(01)}+2^{2}[\mathbf{(11).(10)}-(00).(01)-(11).(01)]+\mathbf{(11).(01)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+1.3.1) Calculando 
+\begin_inset Formula $\mathbf{(00).(01)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Formula $(00).(01)=2^{2}(0).(0)+2[(0+0).(0+1)-(0).(0)-(0).(1)]+(0).(1)=2^{2}.0+2[(0).(1)-0-0]+0=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+1.3.2) Calculando 
+\begin_inset Formula $\mathbf{(11).(01)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Formula $(11).(01)=2^{2}(1).(0)+2[(1+1).(0+1))-(1).(0)-(1).(1)]+(1).(1)=2^{2}.0+2[\mathbf{(10).(01)}-0-1]+1=2.(1)+1=11$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+1.3.3) Calculando 
+\begin_inset Formula $\mathbf{(11).(10)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Formula $(11).(10)=2^{2}(1).(1)+2[\mathbf{(10).(01)}-(1).(1)-(1).(0)]+(1).(0)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1.5cm
+\end_inset
+
+1.3.3.1) Calculando 
+\begin_inset Formula $\mathbf{(10).(01)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1.5cm
+\end_inset
+
+
+\begin_inset Formula $(10).(01)=2^{2}(1).(0)+2[(1+0).(0+1)-(1).(0)-(0).(1)]+(0).(1)=2^{2}.0+2[(1).(1)-0-0]+0=10$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Formula $(11).(10)=2^{2}(1).(1)+2[(1+1).(1+0)-(1).(1)-(1).(0)]+(1).(0)=2^{2}.1+2[10-1-0]+0=100+10=110$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+
+\begin_inset Formula $(0011).(0101)=2^{4}\mathbf{(00).(01)}+2^{2}[\mathbf{(11).(10)}-(00).(01)-(11).(01)]+\mathbf{(11).(01)}=2^{4}.0+2^{2}[110-0-11]+11=1100+11=1111$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(1001).(1011)=2^{4}\mathbf{(10).(10)}+2^{2}[\mathbf{(11).(101)}-(10).(10)-(01).(11)]+\mathbf{(01).(11)}=2^{4}.(100)+2^{2}[1111-100-11]+11=1000000+2^{2}(1000)+11=1000000+100000+11=1100011$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+2) Calculando 
+\begin_inset Formula $\mathbf{(1011).(1010)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(1011).(1010)=2^{4}(10).(10)+2^{2}[(10+11).(10+10)-(10).(10)-(11).(10)]+(11).(10)=2^{4}\mathbf{(10).(10)}+2^{2}[\mathbf{(101).(100)}-(10).(10)-(11).(10)]+\mathbf{(11).(10)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+2.1) Calculando 
+\begin_inset Formula $\mathbf{(10).(10)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+
+\begin_inset Formula $(10).(10)=2^{2}(1).(1)+2[(1+0).(1+0)-(1).(1)-(0).(0)]+(0).(0)=2^{2}.1+2.(1-1-0)+0=100+2.0+0=100$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+2.2) Calculando 
+\begin_inset Formula $\mathbf{(11).(10)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Formula $(11).(10)=2^{2}(1).(1)+2[\mathbf{(10).(01)}-(1).(1)-(1).(0)]+(1).(0)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1.5cm
+\end_inset
+
+2.2.1) Calculando 
+\begin_inset Formula $\mathbf{(10).(01)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1.5cm
+\end_inset
+
+
+\begin_inset Formula $(10).(01)=2^{2}(1).(0)+2[(1+0).(0+1)-(1).(0)-(0).(1)]+(0).(1)=2^{2}.0+2[(1).(1)-0-0]+0=10$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Formula $(11).(10)=2^{2}(1).(1)+2[(1+1).(1+0)-(1).(1)-(1).(0)]+(1).(0)=2^{2}.1+2[10-1-0]+0=100+10=110$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+2.3) Calculando 
+\begin_inset Formula $\mathbf{(0101).(0100)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+
+\begin_inset Formula $(0101).(0100)=2^{4}(01).(01)+2^{2}[(01+01).(01+00)-(01).(01)-(01).(00)]+(01).(00)=2^{4}\mathbf{(01).(01)}+2^{2}[\mathbf{(10).(01)}-(01).(01)-(01).(00)]+\mathbf{(01).(00)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+2.3.1) Calculando 
+\begin_inset Formula $\mathbf{(01).(01)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Formula $(01).(01)=2^{2}(0).(0)+2[(0+1).(0+1)-(0).(0)-(1).(1)]+(1).(1)=2^{2}.0+2[(1).(1)-0-1]+1=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+2.3.2) Calculando 
+\begin_inset Formula $\mathbf{(01).(00)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Formula $(01).(00)=2^{2}(0).(0)+2[(0+1).(0+0)-(0).(0)-(1).(0)]+(1).(0)=2^{2}.0+2[(1).(0)-0-0]+0=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+2.3.3) Calculando 
+\begin_inset Formula $\mathbf{(10).(01)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Formula $(10).(01)=2^{2}(1).(0)+2[(1+0).(0+1)-(1).(0)-(0).(1)]+(0).(1)=2^{2}.0+2[(1).(1)-0-0]+0=10$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+
+\begin_inset Formula $(0101).(0100)=2^{4}\mathbf{(01).(01)}+2^{2}[\mathbf{(10).(01)}-(01).(01)-(01).(00)]+\mathbf{(01).(00)}=2^{4}(1)+2^{2}[(10)-(1)-(0)]+(00)=10000+100=10100$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(1011).(1010)=2^{4}\mathbf{(10).(10)}+2^{2}[\mathbf{(101).(100)}-(10).(10)-(11).(10)]+\mathbf{(11).(10)}=2^{4}.(100)+2^{2}[10100-100-110]+110=1000000+101000+110=1101110$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+3) Calculando 
+\begin_inset Formula $\mathbf{(010100).(010101)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(010100).(010101)=2^{6}(010).(010)+2^{3}[(010+100).(010+101)-(010).(010)-(100).(101)]+(100).(101)=2^{4}\mathbf{(10).(10)}+2^{2}[\mathbf{(110).(111)}-(10).(10)-(100).1(01)]+\mathbf{(100).(101)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+3.1) Calculando 
+\begin_inset Formula $\mathbf{(10).(10)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+
+\begin_inset Formula $(10).(10)=2^{2}(1).(1)+2[(1+0).(1+0)-(1).(1)-(0).(0)]+(0).(0)=2^{2}.1+2.(1-1-0)+0=100+2.0+0=100$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+3.2) Calculando 
+\begin_inset Formula $\mathbf{(0110).(0111)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+
+\begin_inset Formula $(0110).(0111)=2^{4}(01).(01)+2^{2}[(01+10).(01+11)-(01).(01)-(10).(11)]+(10).(11)=2^{4}\mathbf{(01).(01)}+2^{2}[\mathbf{(11).(100)}-(01).(01)-(10).(11)]+\mathbf{(10).(11)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+3.2.1) Calculando 
+\begin_inset Formula $\mathbf{(01).(01)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Formula $(01).(01)=2^{2}(0).(0)+2[(0+1).(0+1)-(0).(0)-(1).(1)]+(1).(1)=2^{2}.0+2[(1).(1)-0-1]+1=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+3.2.2) Calculando 
+\begin_inset Formula $\mathbf{(10).(11)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Formula $(10).(11)=2^{2}(1).(1)+2[(1+0).(1+1))-(1).(1)-(0).(1)]+(0).(1)=2^{2}.1+2[\mathbf{(01).(10)}-1-0]+0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1.5cm
+\end_inset
+
+3.2.2.1) Calculando 
+\begin_inset Formula $\mathbf{(01).(10)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1.5cm
+\end_inset
+
+
+\begin_inset Formula $(01).(10)=2^{2}(0).(1)+2[(0+1).(1+0)-(0).(1)-(1).(0)]+(1).(0)=2^{2}.0+2[(1).(1)-0-0]+0=10$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Formula $(10).(11)=2^{2}(1).(1)+2[(1+0).(1+1))-(1).(1)-(0).(1)]+(0).(1)=2^{2}.1+2[\mathbf{(01).(10)}-1-0]+0=100+10=110$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+3.2.3) Calculando 
+\begin_inset Formula $\mathbf{(11).(100)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Formula $(0011).(0100)=2^{4}(00).(01)+2^{2}[(00+11).(01+00)-(00).(01)-(11).(00)]+(11).(00)=2^{4}\mathbf{(00).(01)}+2^{2}[\mathbf{(11).(01)}-(00).(01)-(11).(00)]+\mathbf{(11).(00)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1.5cm
+\end_inset
+
+3.2.3.1) Calculando 
+\begin_inset Formula $\mathbf{(00).(01)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1.5cm
+\end_inset
+
+
+\begin_inset Formula $(00).(01)=2^{2}(0).(0)+2[(0+0).(0+1)-(0).(0)-(0).(1)]+(0).(1)=2^{2}.0+2[(0).(1)-0-0]+0=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1.5cm
+\end_inset
+
+3.2.3.2) Calculando 
+\begin_inset Formula $\mathbf{(11).(00)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1.5cm
+\end_inset
+
+
+\begin_inset Formula $(11).(00)=2^{2}(1).(0)+2[(1+1).(0+0))-(1).(0)-(1).(0)]+(1).(0)=2^{2}.0+2[\mathbf{(10).(00)}-0-0]+0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 2cm
+\end_inset
+
+3.2.3.2.1) Calculando 
+\begin_inset Formula $\mathbf{(10).(00)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 2cm
+\end_inset
+
+
+\begin_inset Formula $(10).(00)=2^{2}(1).(0)+2[(1+0).(0+0)-(1).(0)-(0).(0)]+(0).(0)=2^{2}.0+2[(1).(0)-0-0]+0=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1.5cm
+\end_inset
+
+
+\begin_inset Formula $(11).(00)=2^{2}.0+2[\mathbf{(10).(00)}-0-0]+0=2^{2}.0+2[0-0-0]+0=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1.5cm
+\end_inset
+
+3.2.3.3) Calculando 
+\begin_inset Formula $\mathbf{(11).(01)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1.5cm
+\end_inset
+
+
+\begin_inset Formula $(11).(01)=2^{2}(1).(0)+2[(1+1).(0+1))-(1).(0)-(1).(1)]+(1).(1)=2^{2}.0+2[(10).(1)-0-1]+1=2.(1)+1=11$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Formula $(0011).(0100)=2^{4}\mathbf{(00).(01)}+2^{2}[\mathbf{(11).(01)}-(00).(01)-(11).(00)]+\mathbf{(11).(00)=}2^{4}.0+2^{2}[11-0-0]+0=1100$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+
+\begin_inset Formula $(0110).(0111)=2^{4}\mathbf{(01).(01)}+2^{2}[\mathbf{(11).(100)}-(01).(01)-(10).(11)]+\mathbf{(10).(11)}=2^{4}(1)+2^{2}[(1100)-(1)-(110)]+(110)=10000+10100+110=101010$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+3.3) Calculando 
+\begin_inset Formula $\mathbf{(0100).(0101)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+
+\begin_inset Formula $(0100).(0101)=2^{4}(01).(01)+2^{2}[(01+00).(01+01)-(01).(01)-(00).(01)]+(00).(01)=2^{4}\mathbf{(}1\mathbf{)}+2^{2}[\mathbf{(01).(10)}-(01).(01)-(00).(01)]+\mathbf{(00).(01)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+3.3.1) Calculando 
+\begin_inset Formula $\mathbf{(01).(01)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Formula $(01).(01)=2^{2}(0).(0)+2[(0+1).(0+1)-(0).(0)-(1).(1)]+(1).(1)=2^{2}.0+2[(1).(1)-0-1]+1=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+3.3.2) Calculando 
+\begin_inset Formula $\mathbf{(00).(01)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Formula $(00).(01)=2^{2}(0).(0)+2[(0+0).(0+1)-(0).(0)-(0).(1)]+(0).(1)=2^{2}.0+2[(0).(1)-0-0]+0=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+3.3.3) Calculando 
+\begin_inset Formula $\mathbf{(01).(10)}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Formula $(01).(10)=2^{2}(0).(1)+2[(0+1).(1+0)-(0).(1)-(1).(0)]+(1).(0)=2^{2}.0+2[(1).(1)-0-0]+0=10$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+
+\begin_inset Formula $(0011).(0100)=2^{4}\mathbf{(00).(01)}+2^{2}[\mathbf{(11).(01)}-(00).(01)-(11).(00)]+\mathbf{(11).(00)=}2^{4}.0+2^{2}[11-0-0]+0=1100$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 0.5cm
+\end_inset
+
+
+\begin_inset Formula $(0100).(0101)=2^{4}\mathbf{(01).(01)}+2^{2}[\mathbf{(01).(10)}-(01).(01)-(00).(01)]+\mathbf{(00).(01)}=2^{4}(1)+2^{2}[10-1-0]+0=10000+100=10100$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(010100).(010101)=2^{6}\mathbf{(10).(10)}+2^{3}[\mathbf{(110).(111)}-(10).(10)-(100).(101)]+\mathbf{(100).(101)=}2^{6}(100)+2^{3}[101010-100-10100]+10100=100000000+10010000+10100=110100100$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $x.y=2^{8}\mathbf{(}1001).(1011\mathbf{)}+2^{4}[\mathbf{(}10100).(10101\mathbf{)}-(1001).(1011)-(1011).(1010)]+\mathbf{(}1011).(1010\mathbf{)}=2^{8}(1100011)+2^{4}[110100100-1100011-1101110]+1101110=110001100000000+110100110000+1101110$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $x.y=111000010011110\Square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Exercício 2.3 
+\end_layout
+
+\begin_layout Paragraph*
+a) Resolvendo a recorrência como se pede:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $T(n)=3T(n/2)+O(n)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $T(n)\leq3T(n/2)+cn$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $T(n)\leq3[3T(n/4)+cn/2]+cn=9T(n/4)+5cn/2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $T(n)\leq9[3T(n/8)+cn/4]+5cn/2=27T(n/8)+19cn/4$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $T(n)\leq27[3T(n/16)+cn/8]+19cn/4=81T(n/16)+65cn/8$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\vdots$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $T(n)<3^{k}T(n/2^{k})+3^{k}cn/2^{k-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+b) É possível resolver mesmo para este caso em que o teorema mestre não
+ funciona:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T(n)=T(n-1)+O(1)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $T(n)\leq T(n-1)+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $T(n)\leq T(n-2)+2c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $T(n)\leq T(n-3)+3c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\vdots$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $T(n)\leq T(n-k)+kc$
+\end_inset
+
+, para 
+\begin_inset Formula $k=n-1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $T(n)\leq T(n-(n-1))+(n-1)c=T(1)+cn-c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula $T(n)=O(n)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Exercício 2.4 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Algortimo A: Soluciona o problema dividindo em 5 subproblemas com a metade
+ do tamanho, resolvendo cada subproblema recursivamente e combinando suas
+ soluções em tempo linear.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Algoritmo B: Soluciona o problemade tamanho 
+\begin_inset Formula $n$
+\end_inset
+
+ resolvendo recursivamente dois subproblemas de tamanho n-1e combinando
+ suas soluções em tempo constante.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Algoritmo C: soluciona problemas de tamanho 
+\begin_inset Formula $n$
+\end_inset
+
+ dividindo-os em nove subproblemas de tamanho n/3, resolvendo recursivamente
+ cada subproblema e combinando suas soluções em 
+\begin_inset Formula $O(n^{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Analisando cada algortimo temos:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+A) 
+\begin_inset Formula $T(n)=5T(n/2)+O(n)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Pelo Teorema Mestre 
+\begin_inset Formula $T(n)=O(n^{log_{2}5})=O(n^{2,32})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset VSpace 0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+B) 
+\begin_inset Formula $T(n)=2T(n-1)+O(1)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Formula $T(n)\leq2T(n-1)+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Formula $T(n)\leq2[2T(n-2)+c]+c=4T(n-2)+3c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Formula $T(n)\leq4[2T(n-3)+c]+3c=8T(n-3)+7c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Formula $\vdots$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Formula $T(n)\leq2^{k}T(n-k)+2k-1$
+\end_inset
+
+, para k = n-1
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Formula $T(n)\leq2^{n-1}T(1)+2n-3$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Formula $T(n)=O(2^{n})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset VSpace 0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+C) 
+\begin_inset Formula $T(n)=9T(n/3)+O(n^{2})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Pelo Teorema Mestre 
+\begin_inset Formula $T(n)=O(n^{2}logn)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+O algortimo B possui complexidade bem maior do que os algoritmos A e C.
+ Entretanto, a diferença entre os algoritmos A e C é mais sútil, por essa
+ razão utilizaremos o WolframAlpha (disponível em http://www.wolframalpha.com)
+ para plotar o gráfico das funções e escolher o melhor algoritmo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /Users/kizzyterra/Desktop/Screen Shot 2015-03-29 at 20.32.29.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Análise de complexidade dos algoritmos A e C)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Com o auxílio da figura acima podemos observar que o algortimo de menor
+ complexidade o qual deve ser escolhido é o algoritmo A.
+\end_layout
+
+\begin_layout Section
+\paragraph_spacing single
+Exercício 2.12
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Analisando a recorrência para n potência de 2:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $f(2^{k})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+still going
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size huge
+\begin_inset Formula $\swarrow$
+\end_inset
+
+
+\begin_inset Formula $\searrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $f(2^{k-1})$
+\end_inset
+
+ 
+\begin_inset Formula $f(2^{k-1})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+still going still going
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size huge
+\begin_inset Formula $\swarrow$
+\end_inset
+
+
+\begin_inset Formula $\searrow$
+\end_inset
+
+
+\begin_inset Formula $\swarrow$
+\end_inset
+
+
+\begin_inset Formula $\searrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $f(2^{k-2})$
+\end_inset
+
+ 
+\begin_inset Formula $f(2^{k-2})$
+\end_inset
+
+ 
+\begin_inset Formula $f(2^{k-2})$
+\end_inset
+
+ 
+\begin_inset Formula $f(2^{k-2})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+still going still going still going still going
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size huge
+\begin_inset Formula $\swarrow$
+\end_inset
+
+
+\begin_inset Formula $\searrow$
+\end_inset
+
+
+\begin_inset Formula $\swarrow$
+\end_inset
+
+
+\begin_inset Formula $\searrow$
+\end_inset
+
+
+\begin_inset Formula $\swarrow$
+\end_inset
+
+
+\begin_inset Formula $\searrow$
+\end_inset
+
+
+\begin_inset Formula $\swarrow$
+\end_inset
+
+
+\begin_inset Formula $\searrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size huge
+\begin_inset Formula $\vdots$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+still going still going still going 
+\begin_inset Formula $\ldots$
+\end_inset
+
+ still going still going still going
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size huge
+\begin_inset Formula $\swarrow$
+\end_inset
+
+
+\begin_inset Formula $\searrow$
+\end_inset
+
+
+\begin_inset Formula $\swarrow$
+\end_inset
+
+
+\begin_inset Formula $\searrow$
+\end_inset
+
+ 
+\begin_inset Formula $\swarrow$
+\end_inset
+
+
+\begin_inset Formula $\searrow$
+\end_inset
+
+
+\size largest
+
+\begin_inset Formula $\ldots$
+\end_inset
+
+ 
+\size huge
+
+\begin_inset Formula $\swarrow$
+\end_inset
+
+
+\begin_inset Formula $\searrow$
+\end_inset
+
+ 
+\begin_inset Formula $\swarrow$
+\end_inset
+
+
+\begin_inset Formula $\searrow$
+\end_inset
+
+ 
+\begin_inset Formula $\swarrow$
+\end_inset
+
+
+\begin_inset Formula $\searrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+\begin_inset Formula $f(1)$
+\end_inset
+
+
+\begin_inset Formula $f(1)$
+\end_inset
+
+ 
+\begin_inset Formula $f(1)$
+\end_inset
+
+ 
+\begin_inset Formula $f(1)$
+\end_inset
+
+ 
+\begin_inset Formula $f(1)$
+\end_inset
+
+ 
+\begin_inset Formula $f(1)$
+\end_inset
+
+
+\begin_inset Formula $\ldots$
+\end_inset
+
+ 
+\begin_inset Formula $f(1)$
+\end_inset
+
+ 
+\begin_inset Formula $f(1)$
+\end_inset
+
+ 
+\begin_inset Formula $f(1)$
+\end_inset
+
+ 
+\begin_inset Formula $f(1)$
+\end_inset
+
+ 
+\begin_inset Formula $f(1)$
+\end_inset
+
+ 
+\begin_inset Formula $f(1)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A partir da observação da árvore de recorrência:
+\end_layout
+
+\begin_layout Standard
+T(1) = 0
+\end_layout
+
+\begin_layout Standard
+T(2) = 1
+\end_layout
+
+\begin_layout Standard
+T(4) = 3 = 2*T(2) + 1
+\end_layout
+
+\begin_layout Standard
+T(8) = 7 = 2*T(4) + 1
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\size huge
+\begin_inset space \hspace{}
+\length 3cm
+\end_inset
+
+
+\begin_inset Formula $\vdots$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+T(
+\begin_inset Formula $2^{k}$
+\end_inset
+
+) = 2*T(
+\begin_inset Formula $2^{k-1}$
+\end_inset
+
+) + 1 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+T(
+\begin_inset Formula $n$
+\end_inset
+
+) = 2*T(
+\begin_inset Formula $n/2$
+\end_inset
+
+) + 1 = 2*T(
+\begin_inset Formula $n/2$
+\end_inset
+
+) + O(1)
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+Pelo Teorema Mestre: d = 0 < 
+\begin_inset Formula $log_{b}a=log_{2}2=1$
+\end_inset
+
+ 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+T(
+\begin_inset Formula $n$
+\end_inset
+
+) = 
+\begin_inset Formula $O(n)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Logo o programa imprime 
+\begin_inset Formula $O(n$
+\end_inset
+
+) linhas.
+\end_layout
+
+\begin_layout Section
+Exercício 2.14
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A idéia do algoritmo implementado coniste em ordenar os elementos em O(nlogn)
+ e então remover os duplicados em O(n) de forma que o algortimo final terá
+ complexidade O(nlogn).
+ O algortimo pedido foi implementado em Python como segue:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+def exercicio14(L): 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+L_sorted = mergesort(L) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+L_without_duplicates = [] 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+j=0 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+for i in range(0,len(L_sorted)): 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+if i == 0: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+L_without_duplicates.insert(j, L_sorted[i]) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+i+=1 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+j+=1 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+else: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+if L_sorted[i] > L_without_duplicates[j-1]: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.6cm
+\end_inset
+
+L_without_duplicates.insert(j,L_sorted[i]) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.6cm
+\end_inset
+
+i+=1 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.6cm
+\end_inset
+
+j+=1 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+else: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.6cm
+\end_inset
+
+i+=1
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+return L_without_duplicates
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+exercício 2.14
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Exercício 2.15
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+def splitInPlace(S,v): 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+current = 0 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+for i in range(0, len(S)): 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+if S[i] < v: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+temp = S[i] 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+S[i] = S[current] 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+S[current] = temp 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+current +=1 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+for i in range(current, len(S)): 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+if S[i] == v: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+temp = S[i] 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+S[i] = S[current] 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+S[current] = temp 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+current +=1 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+return S
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+exercício 2.15
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Exercício 2.17
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uma vez que os elementos do array são distintos podemos O algoritmo implementado
+ é O(log n) uma vez que T(n) = T(n/2) + O(1)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+def exercicio17(L): 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+n = len(L) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+if n==1: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+if L[0] == 0: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+print 'true' 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+else: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+if L[n/2] == n/2: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+print 'true' 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+else: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+if L[n/2] > n/2: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.6cm
+\end_inset
+
+exercicio17(L[:n/2]) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.2cm
+\end_inset
+
+else: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.6cm
+\end_inset
+
+exercicio17(L[n/2:]-n/2)
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+exercício 2.17
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Exercício 2.18
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se um algoritmo de busca em um array ordenado utilizar apenas comparações,
+ então considerando o pior caso o algoritmo realizará a busca em tempo O(n).
+ Uma vez que o número procurado poderá estar na extremidade oposta a extremidade
+ inicial do array e nesse caso será necessário comparar este número com
+ todos os elementos que pertencem ao array.
+\end_layout
+
+\begin_layout Section
+Exercício 2.19
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(a) O algoritmo merge implementado no capítulo dois realiza a operação em
+ tempo O(n) uma vez que percorre uma vez cada array, mais precisamente tempo
+ O(m+n) sendo m e n o tamanho dos respectivos arrays para os quais será
+ realizado o merge.
+ Para o caso dados tendo n listas, serão realizados n -1 "merge", logo a
+ complexidade deste algortimo é (n-1)*O(n) = O(
+\begin_inset Formula $n^{2}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+(b) Uma solução mais eficiente para este problema utilizando a técnica dividir-p
+ara-conquistar seria dividir os arrays em dois conjuntos (cada um com k/2
+ arrays), realizar recursivamente o merge recursivamente nesses conjuntos
+ e finalmente fazer o merge dos dois conjuntos iniciais.
+ O algoritmo foi implementado como segue:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+def merge(x, y): 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+if len(x) == 0: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+return y 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+if len(y) == 0: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+return x 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+if x[0] <= y[0]: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+return [x[0]] + merge(x[1:], y) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+else: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+return [y[0]] + merge(x, y[1:]) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace 0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+def mergeLists(L): 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+n = len(L) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+if len(L) == 0: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+return L 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+if len(L) == 1: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+return L[0] 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.4cm
+\end_inset
+
+else: 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 0.8cm
+\end_inset
+
+return merge(mergeLists(L[:n/2]),mergeLists(L[n/2:]))
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+exercício 2.19
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
