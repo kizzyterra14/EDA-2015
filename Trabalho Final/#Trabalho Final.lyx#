@@ -1,0 +1,1575 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\renewcommand \thefigure{Figura~\@arabic\c@figure}
+\def\fps@figure{tbp}
+\def\ftype@figure{1}
+\def\ext@figure{lof}
+\def\fnum@figure{\thefigure}
+\definecolor{green}{RGB}{0, 100, 0}
+\definecolor{red4}{RGB}{139, 0, 0}
+\definecolor{keywords}{RGB}{0,104,139}
+\definecolor{gray}{RGB}{162, 181, 205}
+\definecolor{Strings}{rgb}{0,0.63,0}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3.5cm
+\topmargin 3.5cm
+\rightmargin 3.5cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\listings_params "aboveskip={0.5cm},basicstyle={\small\ttfamily},breaklines=true,captionpos=b,commentstyle={\itshape\color{gray}},keywords={import,from,class,def,for,while,if,is,in,elif,else,not,and,or,print,break,continue,return,access,as,,del,except,exec,finally,global,lambda,pass,print,raise,try,assert},keywordstyle={\color{keywords}\bfseries},ndkeywords={len,range, None},ndkeywordstyle={\color{red4}\bfseries},stringstyle={\color{Strings}},tab=true,tabsize=3,xleftmargin={1cm},xrightmargin={1cm}"
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+FUNDAÇÃO GETÚLIO VARGAS
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+ESCOLA DE MATEMÁTICA APLICADA
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+MESTRADO 2015.1
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+ESTRUTURA DE DADOS E SEUS ALGORITMOS
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+Prof Alexandre Rademaker
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+Apresentação e discussão dos exercícios selecionados
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+ALUNOS:
+\end_layout
+
+\begin_layout Standard
+\align center
+KIZZY TERRA
+\end_layout
+
+\begin_layout Standard
+\align center
+OTTO TAVARES
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+RIO DE JANEIRO
+\end_layout
+
+\begin_layout Standard
+\align center
+JUNHO DE 2015
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introdução
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este relatório reúne comentários e implementações dos exercícios selecionados
+ cujos enunciados foram previamente apresentados em sala de aula.
+ O objetivo deste documento é, acima de tudo, apresentar as interessantes
+ discussões que emergiram a medida que os exercícios foram sendo analisados
+ e solucionados, ultrapassando a mera exposição da resposta final encontrada
+ para cada questão escolhida.
+ Cabe ressaltar que alguns dos exercícios selecionados foram utilizados
+ apenas como ponto de partida para discussões mais enriquecedoras a fim
+ de proporcionar maior aprendizado e possibilitando os conhecimentos adquiridos
+ ao longo do curso fossem, de fato, colocados em prática.
+\end_layout
+
+\begin_layout Section
+Exercícios selecionados: comentários e discussões
+\end_layout
+
+\begin_layout Subsection
+Exercício Selecionado 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este exercício foi extraído do livro 
+\emph on
+Algorithms 
+\emph default
+de
+\emph on
+ S.
+ Dasgupta, C.
+ H.
+ Papadmitriou 
+\emph default
+e
+\emph on
+ U.V.
+ Varzani, 
+\emph default
+capítulo 6, sendo o exercício 6.1.
+ O enunciado deste exercício refere-se a um conhecido problema de programação
+ dinâmica: subsequência de soma máxima.
+ Este problema consiste de encontrar a subsequência de números com maior
+ soma dentro de lista de números unidimensional dada.
+ Este problema possui duas principais variações unidimensionais: na primeira,
+ consideram-se apenas subsequências contíguas da lista de números; na segunda,
+ por sua vez, as subsequências podem envolver números que não são contíguos.
+ 
+\end_layout
+
+\begin_layout Standard
+O problema da subsequência contígua de soma máxima foi proposto pela primeira
+ vez em 1977 por Ulf Grenander da 
+\emph on
+Brown University, 
+\emph default
+como um modelo simplificado do problema de estimativa de padrões por máxima
+ verossimilhança em imagem digitalizadas.
+ O problema original do estimador de máxima verossimilhança é na verdade
+ um problema de subsequência de soma máxima bidimensional, mas foi proposto
+ por Grenander em sua forma simplificada (unidimensional) visto que o problema
+ bidimensional exigia mais tempo para ser resolvido.
+ Uma solução de tempo linear para o problema unidimensional foi encontrada
+ pouco tempo depois que o problema foi proposto por Jay Kadane da 
+\emph on
+Carnegie-Mellon University.[Bentley, 1984 ---]
+\end_layout
+
+\begin_layout Subsubsection
+A primeira versão
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Problema: Subsequência contígua de soma máxima
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entrada: Uma lista de números 
+\begin_inset Formula $a_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $a_{2}$
+\end_inset
+
+, 
+\begin_inset Formula $a_{3}$
+\end_inset
+
+, 
+\begin_inset Formula $\ldots$
+\end_inset
+
+ , 
+\begin_inset Formula $a_{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Saída: A subsequência contígua de soma máxima (uma subsequência de tamanho
+ zero possui soma zero)
+\end_layout
+
+\begin_layout Subsubsection*
+Discussão
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A solução mais ingênua que se pode dar para esta questão consiste de um
+ algoritmo força bruta que calcula todas as possíveis combinações de subsequênci
+as, calcula a soma para cada uma delas e retorna a subsequência correspondente
+ a maior soma encontrada.
+ A seguir é apresentada a implementação desta abordagem ingênua em Python.
+ 
+\end_layout
+
+\begin_layout Standard
+O método implementado possui três laços 
+\emph on
+for 
+\emph default
+encadeados e cada um deles irá iterar no máximo N vezes, em que N é o número
+ de elemntos da lista de números dada como entrada, portanto a complexidade
+ deste algoritmo é 
+\begin_inset Formula $O(N^{3})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+\align left
+
+def cubic(L):
+\end_layout
+
+\begin_layout Plain Layout
+
+	sizeL = len(L)
+\end_layout
+
+\begin_layout Plain Layout
+
+	if sizeL == 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+		return L
+\end_layout
+
+\begin_layout Plain Layout
+
+	max_sum = L[0]
+\end_layout
+
+\begin_layout Plain Layout
+
+	max_subsequence = L[:1]
+\end_layout
+
+\begin_layout Plain Layout
+
+	for j in range(1, sizeL):
+\end_layout
+
+\begin_layout Plain Layout
+
+		for i in range(j): 
+\end_layout
+
+\begin_layout Plain Layout
+
+			current_sum = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+			for k in range(i,j):
+\end_layout
+
+\begin_layout Plain Layout
+
+				current_sum += L[k]
+\end_layout
+
+\begin_layout Plain Layout
+
+			if current_sum > max_sum:
+\end_layout
+
+\begin_layout Plain Layout
+
+				max_sum = current_sum
+\end_layout
+
+\begin_layout Plain Layout
+
+				max_subsequence = L[i:j]
+\end_layout
+
+\begin_layout Plain Layout
+
+	return max_subsequence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A partir da complexidade do algoritmo já é possível observar que esta solução
+ é pouco eficiente, apenas para ilustrar, em um notebook comum, para uma
+ entrada de tamanho 
+\begin_inset Formula $N=1000$
+\end_inset
+
+ este método levou aproximadamente 13 segundos para terminar de executar
+ e para 
+\begin_inset Formula $N=10000$
+\end_inset
+
+ o tempo de execução foi X[ta faltando completar aqui] horas.
+\end_layout
+
+\begin_layout Standard
+A solução cúbica apresentada é claramente ineficiente e por essa razão,
+ basta pensar um pouco para identicar que podemos modificá-la facilmente
+ e torná-la ligeiramente melhor.
+ É possível tornar o algortimo anteriormente proposto mais eficiente apenas
+ eliminando o laço 
+\emph on
+for 
+\emph default
+mais interno, de forma a obtermos a implementação a seguir:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def quadratic(L):
+\end_layout
+
+\begin_layout Plain Layout
+
+	sizeL = len(L)
+\end_layout
+
+\begin_layout Plain Layout
+
+	if sizeL == 0:
+\end_layout
+
+\begin_layout Plain Layout
+
+		return L
+\end_layout
+
+\begin_layout Plain Layout
+
+	max_sum = L[0]
+\end_layout
+
+\begin_layout Plain Layout
+
+	max_subsequence = L[:1]
+\end_layout
+
+\begin_layout Plain Layout
+
+	for j in range(sizeL):
+\end_layout
+
+\begin_layout Plain Layout
+
+		current_sum = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+		for i in range(j, sizeL):
+\end_layout
+
+\begin_layout Plain Layout
+
+			current_sum += L[i]
+\end_layout
+
+\begin_layout Plain Layout
+
+			if current_sum > max_sum:
+\end_layout
+
+\begin_layout Plain Layout
+
+				max_sum = current_sum
+\end_layout
+
+\begin_layout Plain Layout
+
+				max_subsequence = L[i:j+1]
+\end_layout
+
+\begin_layout Plain Layout
+
+	return max_subsequence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta implementação possui dois laços
+\emph on
+ for
+\emph default
+ encadeados e cada um será executado N vezes, no pior caso, logo a complexidade
+ do algoritmo apresentado é 
+\begin_inset Formula $O(N^{2})$
+\end_inset
+
+.
+ Para esta implementação o tempo de execução de uma entrada de tamanho 
+\begin_inset Formula $N=1000$
+\end_inset
+
+ em um notebook com capacidade de processamento regular foi de 154 milésimos
+ de segundo e para 
+\begin_inset Formula $N=10000$
+\end_inset
+
+ o tempo de execução foi 6 segundos, aproximadamente.
+\end_layout
+
+\begin_layout Standard
+Embora o algoritmo quadrático seja mais eficiente do que o algoritmo cúbico,
+ é possível propor soluções ainda melhores.
+ A seguir será discutida uma solução linear similiar à solução proposta
+ por Kadane na ocasião em que o problema foi proposto.
+\end_layout
+
+\begin_layout Subsubsection*
+A solução linear
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A idéia para esta implementação é utilizar a técnica de programação dinâmica,
+ isto é, construir a solução de um problema através da solução de subproblemas
+ associados.
+ Neste contexto, a primcipal idéia é considerar que para cada elemento I
+ da lista de números a solução procurada (subsequência contígua de soma
+ máxima) é dada pela solução encontrada para o elemento anteiror I - 1(se
+ existir) mais o atual elemento I, ou seja, 
+\begin_inset Formula $S[I-1]\cup L[I]$
+\end_inset
+
+ ou a solução procurada é uma subsequência que começa no elemento I, nesse
+ caso 
+\begin_inset Formula $S[I]=\{L[I]\}$
+\end_inset
+
+.
+ Para implementar esta idéia é necessário utilizar variáveis auxiliares
+ para armazenar a melhor solução encontrada, bem como a solução para cada
+ iteração.
+ Assim, o método inicia-se através da inicialização das variáveis como segue:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+startSoFar = 0     
+\end_layout
+
+\begin_layout Plain Layout
+
+startPrevious = 0     
+\end_layout
+
+\begin_layout Plain Layout
+
+endSoFar = 0     
+\end_layout
+
+\begin_layout Plain Layout
+
+maxSoFar = L[0]     
+\end_layout
+
+\begin_layout Plain Layout
+
+maxPrevious = L[0]     
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A variável 
+\emph on
+startSoFar
+\emph default
+ armazena o índice do elemento que inicia a subsequência de maior soma,
+ a variável 
+\emph on
+startPrevious
+\emph default
+ armazena o índice do elemento que inicia a subsequência de maior soma encontrad
+a na iteração anterior; a variável endSoFar armazena o índice do elemento
+ que encerra a subsequência de maior soma, a variável maxSoFar armazena
+ o valor da subsoma máxima e a variável maxPrevious armazena o valor da
+ subsoma máxima encontrada na iteração anterior.
+\end_layout
+
+\begin_layout Standard
+Em seguida implementa-se um laço 
+\emph on
+for 
+\emph default
+para calcular a solução do problema para cada elemento I (em cada iteração
+ calcula-se a resposta para o problema como se a lista de números terminasse
+ no elemento I), para isso verifica-se qual subsequência possui maior soma:
+ a subsequência composta por todos os elementos até I (
+\begin_inset Formula $S[I-1]\cup L[I]$
+\end_inset
+
+ ) ou a subsequência que se inicia em I(
+\begin_inset Formula $S[I]=\{L[I]\}$
+\end_inset
+
+).
+ Uma vez encontrada a melhor solução para a iteração as variáveis auxiliares
+ são devidamente atualizadas: caso a subsoma encotrada ao final de uma determina
+da iteração (
+\emph on
+maxPrevious
+\emph default
+) seja maior que a subsoma máxima encontrada em todas as iterações anteriores
+ (
+\emph on
+maxSoFar
+\emph default
+), então as variáveis 
+\emph on
+maxSoFar
+\emph default
+, 
+\emph on
+startSoFar
+\emph default
+ e 
+\emph on
+endSoFar
+\emph default
+ são modificadas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2.7cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+if maxPrevious + L[i] >= L[i]:             
+\end_layout
+
+\begin_layout Plain Layout
+
+	maxPrevious = maxPrevious + L[i]         
+\end_layout
+
+\begin_layout Plain Layout
+
+else:            
+\end_layout
+
+\begin_layout Plain Layout
+
+	startPrevious = i             
+\end_layout
+
+\begin_layout Plain Layout
+
+	maxPrevious = L[i]         
+\end_layout
+
+\begin_layout Plain Layout
+
+if maxPrevious >= maxSoFar:             
+\end_layout
+
+\begin_layout Plain Layout
+
+	maxSoFar = maxPrevious             
+\end_layout
+
+\begin_layout Plain Layout
+
+	endSoFar = i             
+\end_layout
+
+\begin_layout Plain Layout
+
+	startSoFar = startPrevious     
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ao final de todas as iterações a subsequência de soma máxima é retornada.
+ O método completo é apresentado a seguir:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def linear(L):
+\end_layout
+
+\begin_layout Plain Layout
+
+	startSoFar = 0     
+\end_layout
+
+\begin_layout Plain Layout
+
+	startPrevious = 0     
+\end_layout
+
+\begin_layout Plain Layout
+
+	endSoFar = 0     
+\end_layout
+
+\begin_layout Plain Layout
+
+	maxSoFar = L[0]     
+\end_layout
+
+\begin_layout Plain Layout
+
+	maxPrevious = L[0] 
+\end_layout
+
+\begin_layout Plain Layout
+
+	for i in range(1,len(L)):         
+\end_layout
+
+\begin_layout Plain Layout
+
+		if maxPrevious + L[i] >= L[i]:             
+\end_layout
+
+\begin_layout Plain Layout
+
+			maxPrevious = maxPrevious + L[i]         
+\end_layout
+
+\begin_layout Plain Layout
+
+		else:            
+\end_layout
+
+\begin_layout Plain Layout
+
+			startPrevious = i             
+\end_layout
+
+\begin_layout Plain Layout
+
+			maxPrevious = L[i]         
+\end_layout
+
+\begin_layout Plain Layout
+
+		if maxPrevious >= maxSoFar:             
+\end_layout
+
+\begin_layout Plain Layout
+
+			maxSoFar = maxPrevious             
+\end_layout
+
+\begin_layout Plain Layout
+
+			endSoFar = i             
+\end_layout
+
+\begin_layout Plain Layout
+
+			startSoFar = startPrevious 
+\end_layout
+
+\begin_layout Plain Layout
+
+	return L[startSoFar:endSoFar+1]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No método apresentado o laço 
+\emph on
+for 
+\emph default
+é o único bloco da implementação que depende do tamanho da entrada e este
+ laço irá executar N vezes, e para cada iteração irá executar um número
+ constante de operações O(1), portanto a complexidade desta solução é 
+\begin_inset Formula $O(N)$
+\end_inset
+
+.
+ O tempo de execução deste método para uma entrada de tamanho N=1000 foi
+ de 25 milésimos, para N=10000 foi de 88 milésimos.
+\end_layout
+
+\begin_layout Subsubsection
+A segunda versão
+\end_layout
+
+\begin_layout Subsubsection*
+Problema: Subsequência de soma máxima
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entrada: Uma lista de números 
+\begin_inset Formula $a_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $a_{2}$
+\end_inset
+
+, 
+\begin_inset Formula $a_{3}$
+\end_inset
+
+, 
+\begin_inset Formula $\ldots$
+\end_inset
+
+ , 
+\begin_inset Formula $a_{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Saída: A subsequência (não necessariamente contígua) de maior soma
+\end_layout
+
+\begin_layout Subsubsection*
+Discussão
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Antes de se discutir uma implementação para esta outra versão do problema
+ da subsequência de soma máxima, é conveniente que se discuta a razão pela
+ qual as implementações apresentadas na seção anterior não funcionam para
+ este caso em que os números que compõe a sequência podem ser não-adjacentes.
+ Isto deve-se ao fato de que naquelas implementações em cada iteração considerav
+a-se apenas a informação da solução encontrada na iteração correspondente
+ ao elemento imediatamente anterior, desconsiderando-se, portanto, outras
+ soluções calculadas em iterações anteriores.
+ Entretanto, para que se possa resolver A seguir serão apresentadas duas
+ diferentes soluções para aboradar o problema, neste caso em que a subsequência
+ pode ser composta de números não-adjacentes: uma com complexidade de tempo
+ quadrática no tamanho da entrada e outra com complexidade de tempo linear.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Uma breve análise do problema bidimensional
+\end_layout
+
+\begin_layout Standard
+""""" Talvez eu tire
+\end_layout
+
+\begin_layout Subsection
+Exercício Selecionado 2
+\end_layout
+
+\begin_layout Subsubsection
+Enunciado
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O Exercício a seguir foi extraído do livro 
+\emph on
+Algorithm Design
+\emph default
+ de 
+\emph on
+John Kleinberg
+\emph default
+ e de 
+\emph on
+Eva Tardos
+\emph default
+, capitulo 4, sendo o exercício de numero 7.
+ Vamos expôr apenas um resumo do enunciado, com as principais informaçoes
+ para resolução de tal exercício.
+ Destaca-se aqui, que a escolha desse exercício foi pautada pelo interesse
+ em enunciar e provar a eficiência de um algoritmo guloso.
+\end_layout
+
+\begin_layout Standard
+Dado um problema, um algoritmo guloso tem como principal característica
+ construir uma solução em pequenos passos, de modo a escolher uma ação a
+ cada passo sob um determinado critério, com o objetivo de otimizar a solução
+ final.
+ Dessa forma, ao final da rotina, deve-se retornar como saída uma solução
+ ótima.
+ É possível identificar diferentes critérios para resolução de um problema,
+ por intermédio de um algoritmo guloso, porém, não necessariamente, o critério
+ escolhido nos leva à solução ótima.
+ Dessa forma, após construir um algoritmo guloso, se faz necessário provar
+ que a solução proposta por tal algoritmo é ótima, sendo esse o nosso objetivo
+ com esse exercício.
+\end_layout
+
+\begin_layout Standard
+O supercomputador exerce trabalhos diferentes que possuem tempo final 
+\begin_inset Formula $P_{1},P_{2},...,P_{n}$
+\end_inset
+
+.
+ Um trabalho exercido pelo supercomputador 
+\begin_inset Formula $P_{i}$
+\end_inset
+
+ só se inicia quando outro 
+\begin_inset Formula $P_{i-1}$
+\end_inset
+
+ termina.
+ Após o trabalho do supercomputador, é necessário o trabalho de um PC para
+ processamento dos dados.
+ Os PCs possuem tempo final de trabalho da ordem de 
+\begin_inset Formula $f_{1},f_{2},...,f_{n}$
+\end_inset
+
+.
+ Pergunta-se: Qual a melhor forma de alocar os trabalhos dos supercomputadores
+ e dos PCs de modo a minimizar o tempo de processamento do dado.
+\end_layout
+
+\begin_layout Subsubsection
+Prova da Otimalidade
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A primeira etapa será analisar os jobs do supercomputador.
+ Como já dito no enunciado, 
+\begin_inset Formula $P_{i}$
+\end_inset
+
+ será o valor da duração dos jobs do supercomputador e 
+\begin_inset Formula $F_{i}$
+\end_inset
+
+ o valor duração dos jobs dos PCs.
+\end_layout
+
+\begin_layout Standard
+Uma vez que todos os jobs de um PC iniciam necessariamente após o job de
+ um supercomputador, e como os jobs dos supercomputadores devem ser ordenados
+ de modo que nao haja sobreposição entre seus valores, podemos inferir que
+ a ordem dos supercomputadores é indiferente, pois dadas as hipóteses listadas,
+ o que de fato irá interferir no tempo final dos jobs será a ordem dos trabalhos
+ dos PCs.
+\end_layout
+
+\begin_layout Standard
+Com efeito, nosso algoritmo A exposto em código python na próxima seção
+ ordena a duração dos jobs feitos pelos PCs em ordem decrescente.
+ Em resumo, nosso critério será escolher a cada passo o job de um PC de
+ maior valor.
+ Através desse algoritmo, vamos ser capazes de alocar os jobs dos supercomputado
+res e dos PCs de modo a gastar o menor tempo possível nessa tarefa, como
+ será provado a seguir:
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Passo Base: Seja k a iteraçãao no tempo, temos nesse passo k = 1.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Seja 
+\emph default
+
+\begin_inset Formula $F_{i}^{*}$
+\end_inset
+
+
+\emph on
+ o job de maior duração feito por um PC, supõe-se um algoritmo O que não
+ posiciona o job 
+\emph default
+
+\begin_inset Formula $F_{i}^{*}$
+\end_inset
+
+
+\emph on
+ na primeira posição, isto é, após o termino do job do primeiro supercomputador.
+ Isso nos leva à conclusão de que o algoritmo O não ordena os trabalhos
+ dos PCs em ordem decrescente dos valores de duração.
+ Aqui, destaca-se o fato de que para um job de um PC começar o de um supercomput
+ador deve terminar e, no passo base, apenas um job 
+\begin_inset Formula $P_{1}$
+\end_inset
+
+ foi concluído por um supercomputador.
+ Seja T o tempo gasto pelo algoritmo A implementado nesse artigo e seja
+ T` o tempo gasto pelo algoritmo O, pode-se afirmar que:
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+\begin_inset Formula 
+\[
+T=P_{1}+F_{i}^{*}<P_{-1}+F_{i}^{*}=T^{'}
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Ao considerar 
+\begin_inset Formula $P_{-1}$
+\end_inset
+
+como P não um, sabemos que tal job começará necessariamente após 
+\begin_inset Formula $P_{1}$
+\end_inset
+
+.
+ Ou seja, se 
+\emph default
+
+\begin_inset Formula $F_{i}^{*}$
+\end_inset
+
+
+\emph on
+ for posicionado em outro lugar que não com 
+\begin_inset Formula $P_{1}$
+\end_inset
+
+ por O, o algoritmo A termina em menor tempo.
+ Por outro lado, se 
+\emph default
+
+\begin_inset Formula $F_{i}^{*}$
+\end_inset
+
+ é
+\emph on
+ posicionado com 
+\begin_inset Formula $P_{1}$
+\end_inset
+
+ por O, como em A, temos que os dois fazem a mesma escolha ótima T.
+ Assim o algoritmo A mantém a propriedade de "stays ahead"(nota de rodape)
+ de algoritmos gulosos.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Passo Indutivo: Aqui, considera-se que as iterações k =< n são válidas.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+A partir da hipótese indutiva podemos dizer que:
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+\begin_inset Formula 
+\[
+T=P_{k+1}+F_{i-k}^{*}<P_{k+j}+F_{i-k}^{*}=T^{'},\; sendo\; j>1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Isso é válido pois 
+\begin_inset Formula $P_{n+j}$
+\end_inset
+
+ necessariamente começa após 
+\begin_inset Formula $P_{n+1}$
+\end_inset
+
+ o que faz do tempo em O ser maior do que em A.
+ Se j = 1, então o algoritmo O possui tempo igual ao tempo de A, o que garante
+ a propriedade de stays ahead.
+ Dessa forma, pode-se concluir que nosso algoritmo é ótimo.
+\end_layout
+
+\begin_layout Subsubsection
+Implementação
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entrada: Uma lista de jobs representados por tuplas do tipo 
+\begin_inset Formula $(p_{i},f_{i})$
+\end_inset
+
+ em que o primeiro elmento é o tempo que o supercomputador leva para processar
+ o job e o segundo, é o tempo de execução em um PC.
+\end_layout
+
+\begin_layout Standard
+Saída: Uma lista de jobs -representados por tuplas do tipo 
+\begin_inset Formula $(p_{i},f_{i})$
+\end_inset
+
+- na ordem ótima em que devem ser executados para minimizar o tempo total
+ de execução.
+ 
+\end_layout
+
+\begin_layout Standard
+--Funcao auxiliar criada para selecionar elementos da tupla que serao comparados
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def compare(a, b):     
+\end_layout
+
+\begin_layout Plain Layout
+
+	return a[1] >= b[1] 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Funcao merge que faz a operacao de sort ao concatenar o maior elemento #com
+ os demais elementos da lista 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def merge(lista_rst, lista_nd):     
+\end_layout
+
+\begin_layout Plain Layout
+
+	if len(lista_rst) is 0:         
+\end_layout
+
+\begin_layout Plain Layout
+
+		return(lista_nd)     
+\end_layout
+
+\begin_layout Plain Layout
+
+	elif len(lista_nd) is 0:         
+\end_layout
+
+\begin_layout Plain Layout
+
+		return(lista_rst)     
+\end_layout
+
+\begin_layout Plain Layout
+
+	else:         
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Modificacao para iterar entre tuplas e ordenar em ordem decrescente  
+       	#dos valores dos jobs dos PCs         
+\end_layout
+
+\begin_layout Plain Layout
+
+		if compare(lista_rst[0], lista_nd[0]):             
+\end_layout
+
+\begin_layout Plain Layout
+
+			temp = [lista_rst[0]]
+\end_layout
+
+\begin_layout Plain Layout
+
+			temp.extend(merge(lista_rst[1:],lista_nd))             
+\end_layout
+
+\begin_layout Plain Layout
+
+			return(temp)         
+\end_layout
+
+\begin_layout Plain Layout
+
+		else:             
+\end_layout
+
+\begin_layout Plain Layout
+
+			temp = [lista_nd[0]]             
+\end_layout
+
+\begin_layout Plain Layout
+
+			temp.extend(merge(lista_rst,lista_nd[1:]))             
+\end_layout
+
+\begin_layout Plain Layout
+
+			return(temp)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def mergesort_inverse(lista):     
+\end_layout
+
+\begin_layout Plain Layout
+
+	if len(lista) <= 1:         
+\end_layout
+
+\begin_layout Plain Layout
+
+		return(lista)     
+\end_layout
+
+\begin_layout Plain Layout
+
+	else:         
+\end_layout
+
+\begin_layout Plain Layout
+
+		med = len(lista) // 2         
+\end_layout
+
+\begin_layout Plain Layout
+
+		result=merge(mergesort_inverse(lista[:med]),mergesort_inverse(lista[med:]))
+        
+\end_layout
+
+\begin_layout Plain Layout
+
+		return(result)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+deve-se ordenar jobs de maneira decrescente nos tempos de trabalho dos PCs
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#jobs = [(24,5),(31,9),(57,22),(39,56),(5,1),(82,43)]
+\end_layout
+
+\begin_layout Plain Layout
+
+def schedule(jobs):    
+\end_layout
+
+\begin_layout Plain Layout
+
+	return(mergesort_inverse(jobs))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
