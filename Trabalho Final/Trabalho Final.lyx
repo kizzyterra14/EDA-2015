@@ -1047,28 +1047,179 @@ indent
 \end_layout
 
 \begin_layout Standard
-Antes de se discutir uma implementação para esta outra versão do problema
- da subsequência de soma máxima, é conveniente que se discuta a razão pela
- qual as implementações apresentadas na seção anterior não funcionam para
- este caso em que os números que compõe a sequência podem ser não-adjacentes.
- Isto deve-se ao fato de que naquelas implementações em cada iteração considerav
-a-se apenas a informação da solução encontrada na iteração correspondente
- ao elemento imediatamente anterior, desconsiderando-se, portanto, outras
- soluções calculadas em iterações anteriores.
+Para esta versão do problema em que os números que compõe a sequência a
+ ser retornada podem ser não-adjacentes, as soluções apresentadas na seção
+ anterior não podem ser utilizadas, visto que naquelas implementações memorizava
+-se a solução parcial encontrada a cada iteração para que fosse utilizada
+ no cálculo da solução parcial da iteração seguinte.
  Entretanto, para que se possa encontrar a solução correta para este caso,
- é necessárioXXXXXXXXXXXXXX A seguir serão apresentadas duas diferentes
- soluções para aboradar o problema, neste caso em que a subsequência pode
- ser composta de números não-adjacentes: uma com complexidade de tempo quadrátic
-a no tamanho da entrada e outra com complexidade de tempo linear.
- 
-\end_layout
-
-\begin_layout Subsubsection
-Uma breve análise do problema bidimensional
+ é necessário calcular a solução parcial em uma determinada iteração em
+ relação a todas as iterações anteriores, e não apenas em relação a solução
+ parcial imediatamente anteiror como fazia-se na seção 2.1.1.
 \end_layout
 
 \begin_layout Standard
-""""" Talvez eu tire
+A seguir serão apresentadas duas diferentes implementações para o problema:
+ uma com complexidade de tempo quadrática no tamanho da entrada e outra
+ com complexidade de tempo linear.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+A solução quadrática
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def quadratic(L):
+\end_layout
+
+\begin_layout Plain Layout
+
+	n = len(L)
+\end_layout
+
+\begin_layout Plain Layout
+
+	maxSoFar_index = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+	Para cada max[i] em max[1],..,max[n]:         
+\end_layout
+
+\begin_layout Plain Layout
+
+	max[i] = 0 
+\end_layout
+
+\begin_layout Plain Layout
+
+Para cada subsequence[i] em subsequence[1],.., subsequence[n]:          
+\end_layout
+
+\begin_layout Plain Layout
+
+	subsequence[i] = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+max[1] = a[1] 
+\end_layout
+
+\begin_layout Plain Layout
+
+maxSoFar_index = 1 
+\end_layout
+
+\begin_layout Plain Layout
+
+i = 2 
+\end_layout
+
+\begin_layout Plain Layout
+
+Para cada a[i] em a[2], a[3],…,a[n]:             
+\end_layout
+
+\begin_layout Plain Layout
+
+	Para cada max[j] em max[1],…,max[i-1]:                      
+\end_layout
+
+\begin_layout Plain Layout
+
+		se max[j] + a[i] >= a[i]:                                
+\end_layout
+
+\begin_layout Plain Layout
+
+			subsequence[i] =j                                
+\end_layout
+
+\begin_layout Plain Layout
+
+			max[i] = max[j] + a[i]                      
+\end_layout
+
+\begin_layout Plain Layout
+
+		se não:                                
+\end_layout
+
+\begin_layout Plain Layout
+
+			max[i] = a[i]            
+\end_layout
+
+\begin_layout Plain Layout
+
+	se max[i] > max[maxSoFar_index]:                     
+\end_layout
+
+\begin_layout Plain Layout
+
+		maxSoFar_index = i            
+\end_layout
+
+\begin_layout Plain Layout
+
+	i = i + 1
+\end_layout
+
+\begin_layout Plain Layout
+
+k = subsequence[maxSoFar_index]  
+\end_layout
+
+\begin_layout Plain Layout
+
+i = 0 
+\end_layout
+
+\begin_layout Plain Layout
+
+Enquanto k != 0 :            
+\end_layout
+
+\begin_layout Plain Layout
+
+	max_subsequence[i] = k            
+\end_layout
+
+\begin_layout Plain Layout
+
+	k = subsequence[k]            
+\end_layout
+
+\begin_layout Plain Layout
+
+	i = i + 1                    
+\end_layout
+
+\begin_layout Plain Layout
+
+retornar reverse(max_subsequence)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+A solução linear
+\end_layout
+
+\begin_layout Subsubsection
+Análise dos tempos de execução
 \end_layout
 
 \begin_layout Subsection
