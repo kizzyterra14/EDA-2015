@@ -20,8 +20,8 @@ def countTrueVariables(solution):
 def STINGYSAT(clause, k):
 	return "Solution for STINGYSAT"
 
-def reduceSatToStingySAT(icnf, clause):
-	STINGYSAT(clause, icnf.NUMBER_OF_VARIABLES())
+def reduceSatToStingySAT(cnf, clause):
+	return STINGYSAT(clause, cnf.NUMBER_OF_VARIABLES())
 
 def reduceStingySatToSAT(clause, k):
 	solutions = SAT(clause)
