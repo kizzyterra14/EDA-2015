@@ -41,7 +41,7 @@
 \spacing onehalf
 \use_hyperref false
 \papersize a4paper
-\use_geometry true
+\use_geometry false
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -240,7 +240,7 @@ Este relatório reúne comentários e implementações dos exercícios seleciona
 \end_layout
 
 \begin_layout Section
-Exercícios selecionados: comentários e discussões
+Exercícios selecionados
 \end_layout
 
 \begin_layout Subsection
@@ -273,19 +273,14 @@ indent
 \begin_layout Standard
 Este exercício foi extraído do livro 
 \emph on
-Algorithms 
-\emph default
-de
-\emph on
- S.
- Dasgupta, C.
- H.
- Papadmitriou 
-\emph default
-e
-\emph on
- U.V.
- Varzani, 
+Algorithms
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Dasgupta2006"
+
+\end_inset
+
+, 
 \emph default
 capítulo 6, sendo o exercício 6.1.
  O enunciado deste exercício refere-se a um conhecido problema de programação
@@ -313,18 +308,27 @@ como um modelo simplificado do problema de estimativa de padrões por máxima
  Uma solução de tempo linear para o problema unidimensional foi encontrada
  pouco tempo depois que o problema foi proposto por Jay Kadane da 
 \emph on
-Carnegie-Mellon University.[Bentley, 1984 ---]
+Carnegie-Mellon University.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bentley1984"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
 A primeira versão
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection*
@@ -381,13 +385,6 @@ Discussão
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -412,24 +409,107 @@ as, calcula a soma para cada uma delas e retorna a subsequência correspondente
  
 \end_layout
 
+\begin_layout Paragraph*
+Implementação
+\end_layout
+
 \begin_layout Standard
-O método implementado possui três laços 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Descrição das variáveis utilizadas 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \quad{}
+\end_inset
+
+
+\emph on
+L: 
+\emph default
+lista de números (entrada)
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \quad{}
+\end_inset
+
+
+\emph on
+sizeL: 
+\emph default
+tamanho da entrada L
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \quad{}
+\end_inset
+
+
+\emph on
+max_sum: 
+\emph default
+armazena o valor da soma máxima.
+ É inicializada com o valor do primeiro elemento da lista de números e é
+ atualizada, durante a execução, a medida que são encontradas somas maiores
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \quad{}
+\end_inset
+
+
+\emph on
+max_subsequence:
+\emph default
+ armazena os elementos que compõe a subsequência de soma máxima
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \quad{}
+\end_inset
+
+
+\emph on
+current_sum: 
+\emph default
+armazena o valor da soma para cada iteração de 
+\emph on
+i
+\emph default
+ (laço 
 \emph on
 for 
 \emph default
-encadeados e cada um deles irá iterar no máximo N vezes, em que N é o número
- de elemntos da lista de números dada como entrada, portanto a complexidade
- deste algoritmo é 
-\begin_inset Formula $O(N^{3})$
-\end_inset
-
-.
- 
+intermediário)
 \end_layout
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "basicstyle={\ttfamily}"
+lstparams "basicstyle={\small\ttfamily}"
 inline false
 status open
 
@@ -515,34 +595,60 @@ def cubic(L):
 \end_layout
 
 \begin_layout Standard
-A partir da complexidade do algoritmo já é possível observar que esta solução
- é pouco eficiente, apenas para ilustrar, em um notebook comum, para uma
- entrada de tamanho 
-\begin_inset Formula $N=1000$
+\begin_inset VSpace defskip
 \end_inset
 
- este método levou aproximadamente 13 segundos para terminar de executar
- e para 
-\begin_inset Formula $N=10000$
+
+\end_layout
+
+\begin_layout Standard
+O método implementado possui três laços 
+\emph on
+for 
+\emph default
+encadeados e cada um deles irá iterar no máximo N vezes, em que N é o número
+ de elemntos da lista de números dada como entrada, portanto a complexidade
+ deste algoritmo é 
+\begin_inset Formula $O(N^{3})$
 \end_inset
 
- o tempo de execução foi X[ta faltando completar aqui] horas.
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Solução quadrática
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 A solução cúbica apresentada é claramente ineficiente e por essa razão,
- basta pensar um pouco para identicar que podemos modificá-la facilmente
- e torná-la ligeiramente melhor.
- É possível tornar o algortimo anteriormente proposto mais eficiente apenas
- eliminando o laço 
+ basta pensar um pouco para identificar que podemos modificá-la facilmente
+ e torná-la ligeiramente melhor, isso pode ser feito apenas eliminando o
+ laço 
 \emph on
 for 
 \emph default
-mais interno, de forma a obtermos a implementação a seguir:
+mais interno, como segue:
 \end_layout
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "basicstyle={\small\ttfamily}"
 inline false
 status open
 
@@ -632,16 +738,7 @@ Esta implementação possui dois laços
 \end_inset
 
 .
- Para esta implementação o tempo de execução de uma entrada de tamanho 
-\begin_inset Formula $N=1000$
-\end_inset
-
- em um notebook com capacidade de processamento regular foi de 154 milésimos
- de segundo e para 
-\begin_inset Formula $N=10000$
-\end_inset
-
- o tempo de execução foi 6 segundos, aproximadamente.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -653,13 +750,6 @@ Embora o algoritmo quadrático seja mais eficiente do que o algoritmo cúbico,
 
 \begin_layout Subsubsection*
 A solução linear
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -682,53 +772,27 @@ indent
 A idéia para esta implementação é utilizar a técnica de programação dinâmica,
  isto é, construir a solução de um problema através da solução de subproblemas
  associados.
- Neste contexto, a primcipal idéia é considerar que para cada elemento I
+ Neste contexto, a principal idéia é considerar que para cada elemento I
  da lista de números a solução procurada (subsequência contígua de soma
- máxima) é dada pela solução encontrada para o elemento anteiror I - 1(se
- existir) mais o atual elemento I, ou seja, 
-\begin_inset Formula $S[I-1]\cup L[I]$
-\end_inset
+ máxima) pode ser encontrada a partir da solução calculada para o elemento
+ anteiror I - 1(se existir), beneficiando-se do fato de que duas somas parciais
+ vizinhas computadas ao longo da execução diferem por apenas um elemento.
+ 
+\end_layout
 
- ou a solução procurada é uma subsequência que começa no elemento I, nesse
- caso 
-\begin_inset Formula $S[I]=\{L[I]\}$
-\end_inset
-
-.
- Para implementar esta idéia é necessário utilizar variáveis auxiliares
- para armazenar a melhor solução encontrada, bem como a solução para cada
- iteração.
- Assim, o método inicia-se através da inicialização das variáveis como segue:
+\begin_layout Paragraph*
+Implementação
 \end_layout
 
 \begin_layout Standard
-\begin_inset listings
-inline false
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-startSoFar = 0     
-\end_layout
 
-\begin_layout Plain Layout
-
-startPrevious = 0     
-\end_layout
-
-\begin_layout Plain Layout
-
-endSoFar = 0     
-\end_layout
-
-\begin_layout Plain Layout
-
-maxSoFar = L[0]     
-\end_layout
-
-\begin_layout Plain Layout
-
-maxPrevious = L[0]     
+\backslash
+indent
 \end_layout
 
 \end_inset
@@ -737,24 +801,85 @@ maxPrevious = L[0]
 \end_layout
 
 \begin_layout Standard
-A variável 
-\emph on
-startSoFar
-\emph default
- armazena o índice do elemento que inicia a subsequência de maior soma,
- a variável 
-\emph on
-startPrevious
-\emph default
- armazena o índice do elemento que inicia a subsequência de maior soma encontrad
-a na iteração anterior; a variável endSoFar armazena o índice do elemento
- que encerra a subsequência de maior soma, a variável maxSoFar armazena
- o valor da subsoma máxima e a variável maxPrevious armazena o valor da
- subsoma máxima encontrada na iteração anterior.
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Em seguida implementa-se um laço 
+
+\emph on
+Descrição das variáveis utilizadas
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \quad{}
+\end_inset
+
+
+\emph on
+startSoFar: 
+\emph default
+armazena o índice do elemento que inicia a subsequência de maior soma
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \quad{}
+\end_inset
+
+
+\emph on
+startPrevious: 
+\emph default
+armazena o índice do elemento que inicia a subsequência de maior soma encontrada
+ na iteração anterior
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \quad{}
+\end_inset
+
+
+\emph on
+endSoFar:
+\emph default
+ armazena o índice do elemento que encerra a subsequência de maior soma
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \quad{}
+\end_inset
+
+
+\emph on
+maxSoFar:
+\emph default
+ armazena o valor da subsoma máxima.
+ É inicializada com o valor do primeiro elemento da lista de números e é
+ atualizada, durante a execução, a medida que são encontradas somas maiores
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \quad{}
+\end_inset
+
+
+\emph on
+maxPrevious:
+\emph default
+ armazena o valor da subsoma máxima encontrada na iteração anterior.
+ É inicializada com o valor do primeiro elemento da lista de números e é
+ atualizada, durante a execução, a medida que são encontradas somas maiores
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O algortimo inicia-se com a inicialização das variáveis conforme descrito
+ e em seguida implementa-se um laço 
 \emph on
 for 
 \emph default
@@ -797,14 +922,8 @@ endSoFar
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 2.7cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset listings
+lstparams "basicstyle={\footnotesize\ttfamily}"
 inline false
 status open
 
@@ -864,7 +983,15 @@ Ao final de todas as iterações a subsequência de soma máxima é retornada.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset listings
+lstparams "basicstyle={\small\ttfamily}"
 inline false
 status open
 
@@ -970,8 +1097,7 @@ for
 \end_inset
 
 .
- O tempo de execução deste método para uma entrada de tamanho N=1000 foi
- de 25 milésimos, para N=10000 foi de 88 milésimos.
+ 
 \end_layout
 
 \begin_layout Subsubsection
@@ -1056,21 +1182,329 @@ Para esta versão do problema em que os números que compõe a sequência a
  é necessário calcular a solução parcial em uma determinada iteração em
  relação a todas as iterações anteriores, e não apenas em relação a solução
  parcial imediatamente anteiror como fazia-se na seção 2.1.1.
-\end_layout
-
-\begin_layout Standard
-A seguir serão apresentadas duas diferentes implementações para o problema:
- uma com complexidade de tempo quadrática no tamanho da entrada e outra
- com complexidade de tempo linear.
- 
+ A seguir será apresentada uma solução com complexidade de tempo quadrática
+ no tamanho da entrada.
 \end_layout
 
 \begin_layout Subsubsection*
-A solução quadrática
+Uma solução quadrática
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta implementação utiliza a técnica de programação dinâmica através do
+ armazenamento de resultados intermediários calculados ao longo da execução.
+ A idéia deste algoritmo consiste de calcular a solução para uma determinada
+ iteração levando-se em consideração todos os resultados previamente calculados
+ de modo que a subsequência de soma máxima encontrada para a iteração será:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\size footnotesize
+\begin_inset Formula 
+\[
+subseqMax(i)=max\{max\{subseqMax(k)\cup elemento(i);\, k<i\},\; elemento(i)\}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Isto é, a subsequência de soma máxima para uma dada iteração I é calculada
+ comparando as somas das subsequências encontradas nas iterações anteriores
+ adicionadas do elemento I com o próprio elemento I.
+ Estas comparações executadas a cada iteração tornam esta solução quadrática,
+ uma vez que o número de comparações por iteração é (I-1) e são realizadas
+ N iterações no total, onde N é o tamanho da entrada, logo a complexidade
+ de tempo do algoritmo é 
+\begin_inset Formula $O(N^{2})$
+\end_inset
+
+.
+ Nesta solução a complexidade de espaço também depende do tamanho da entrada,
+ uma vez que armazena-se os resultados intermediários obtidos para as N
+ iterações, tornando a complexidade espacial 
+\begin_inset Formula $O(N)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Implementação
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Descrição das variáveis utilizadas 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \quad{}
+\end_inset
+
+
+\emph on
+L : 
+\emph default
+lista de números
+\emph on
+ 
+\emph default
+(entrada)
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \quad{}
+\end_inset
+
+
+\emph on
+sizeL : 
+\emph default
+tamanho da entrada
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \quad{}
+\end_inset
+
+
+\emph on
+maxSoFar_index: 
+\emph default
+armazena o índice do último elemento da subsequência de soma máxima.
+ É inicializado com zero, sendo atualizado a medida que subsequências com
+ somas maiores são encontradas
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \quad{}
+\end_inset
+
+
+\emph on
+maxSum: 
+\emph default
+array de tamanho N que armazena em cada posição 
+\emph on
+k
+\emph default
+ o valor da soma da subsquência de soma máxima encontrada para a posição
+ 
+\emph on
+k.
+ 
+\emph default
+É inicializado com os elementos da entrada L
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \quad{}
+\end_inset
+
+
+\emph on
+subsequence: 
+\emph default
+array de tamanho N utlilizado para recuperar os elementos que compõe a subsequên
+cia de soma máxima.
+ Cada posição corresponde a um elemento 
+\emph on
+i 
+\emph default
+e armazena o índice do elemento que o antecede na subsequência de soma máxima.
+ Os elementos deste array são inicializados com valor -1.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \quad{}
+\end_inset
+
+
+\emph on
+max_subsequence: 
+\emph default
+armazena os elementos que compõe a subsequência de soma máxima
+\end_layout
+
+\begin_layout Standard
+A algortimo inicia-se com a inicialização das variáveis conforme descrito
+ e em seguida implementa-se dois laços for encadeados para encontrar os
+ resultados intermediários para cada um dos elementos da lista.
 \end_layout
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "basicstyle={\footnotesize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	for i in range(1,sizeL):    
+\end_layout
+
+\begin_layout Plain Layout
+
+		for j in range(i):                            
+\end_layout
+
+\begin_layout Plain Layout
+
+			if maxSum[j] + L[i] >= maxSum[i]:                                
+\end_layout
+
+\begin_layout Plain Layout
+
+				subsequence[i] = j                                
+\end_layout
+
+\begin_layout Plain Layout
+
+				maxSum[i] = maxSum[j] + L[i]                                 
+\end_layout
+
+\begin_layout Plain Layout
+
+		if maxSum[i] >= maxSum[maxSoFar_index]:                     
+\end_layout
+
+\begin_layout Plain Layout
+
+			maxSoFar_index = i 
+\end_layout
+
+\begin_layout Plain Layout
+
+          
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ao final de todas as iterações recupera-se a subsequência de soma máxima
+ utilizando-se o array 
+\emph on
+subsequence
+\emph default
+ e é armazenada no array 
+\emph on
+max_subsequence 
+\emph default
+para ser retornada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\footnotesize\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+k = maxSoFar_index
+\end_layout
+
+\begin_layout Plain Layout
+
+while k != -1 :            
+\end_layout
+
+\begin_layout Plain Layout
+
+	max_subsequence.append(L[k])            
+\end_layout
+
+\begin_layout Plain Layout
+
+	k = subsequence[k]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O método completo é apresentado a seguir:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\footnotesize\ttfamily}"
 inline false
 status open
 
@@ -1081,7 +1515,21 @@ def quadratic(L):
 
 \begin_layout Plain Layout
 
-	n = len(L)
+	sizeL = len(L)
+\end_layout
+
+\begin_layout Plain Layout
+
+	if sizeL < 1:
+\end_layout
+
+\begin_layout Plain Layout
+
+		return L
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -1091,122 +1539,479 @@ def quadratic(L):
 
 \begin_layout Plain Layout
 
-	Para cada max[i] em max[1],..,max[n]:         
+	maxSum = []
 \end_layout
 
 \begin_layout Plain Layout
 
-	max[i] = 0 
+	subsequence = []
 \end_layout
 
 \begin_layout Plain Layout
 
-Para cada subsequence[i] em subsequence[1],.., subsequence[n]:          
+	for i in range(sizeL):         
 \end_layout
 
 \begin_layout Plain Layout
 
-	subsequence[i] = 0
+		maxSum.append(L[i]) 
 \end_layout
 
 \begin_layout Plain Layout
 
-max[1] = a[1] 
+	for i in range(sizeL):          
 \end_layout
 
 \begin_layout Plain Layout
 
-maxSoFar_index = 1 
+		subsequence.append(-1) 
 \end_layout
 
 \begin_layout Plain Layout
 
-i = 2 
+	
 \end_layout
 
 \begin_layout Plain Layout
 
-Para cada a[i] em a[2], a[3],…,a[n]:             
+	for i in range(1,sizeL):    
 \end_layout
 
 \begin_layout Plain Layout
 
-	Para cada max[j] em max[1],…,max[i-1]:                      
+		for j in range(i):                            
 \end_layout
 
 \begin_layout Plain Layout
 
-		se max[j] + a[i] >= a[i]:                                
+			if maxSum[j] + L[i] >= maxSum[i]:                                
 \end_layout
 
 \begin_layout Plain Layout
 
-			subsequence[i] =j                                
+				subsequence[i] = j                                
 \end_layout
 
 \begin_layout Plain Layout
 
-			max[i] = max[j] + a[i]                      
+				maxSum[i] = maxSum[j] + L[i]                                 
 \end_layout
 
 \begin_layout Plain Layout
 
-		se não:                                
+		if maxSum[i] >= maxSum[maxSoFar_index]:                     
 \end_layout
 
 \begin_layout Plain Layout
 
-			max[i] = a[i]            
+			maxSoFar_index = i 
 \end_layout
 
 \begin_layout Plain Layout
 
-	se max[i] > max[maxSoFar_index]:                     
+          
 \end_layout
 
 \begin_layout Plain Layout
 
-		maxSoFar_index = i            
+	k = maxSoFar_index
 \end_layout
 
 \begin_layout Plain Layout
 
-	i = i + 1
+	max_subsequence=[]
 \end_layout
 
 \begin_layout Plain Layout
 
-k = subsequence[maxSoFar_index]  
 \end_layout
 
 \begin_layout Plain Layout
 
-i = 0 
+	while k != -1 :            
 \end_layout
 
 \begin_layout Plain Layout
 
-Enquanto k != 0 :            
+		max_subsequence.append(L[k])            
 \end_layout
 
 \begin_layout Plain Layout
 
-	max_subsequence[i] = k            
+		k = subsequence[k]
 \end_layout
 
 \begin_layout Plain Layout
 
-	k = subsequence[k]            
 \end_layout
 
 \begin_layout Plain Layout
 
-	i = i + 1                    
+    max_subsequence.reverse()            
 \end_layout
 
 \begin_layout Plain Layout
 
-retornar reverse(max_subsequence)
+	return max_subsequence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Análise dos tempos de execução
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nesta seção apresentamos uma comparação dos tempos de execução obtidos para
+ as diferentes implementações apresentadas para diferentes tamanhos de entrada:
+\end_layout
+
+\begin_layout Subsubsection*
+Subsequências Contíguas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tamanho da entrada
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Algoritmo cúbico
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Algoritmo Quadrático
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Algoritmo linear
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $O(N^{3})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $O(N^{2})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $O(N)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10^{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10^{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10^{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13 segundos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+154 milésimos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25 milésimos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10^{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6 segundos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+88 milésimos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tempos de execução
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1215,11 +2020,299 @@ retornar reverse(max_subsequence)
 \end_layout
 
 \begin_layout Subsubsection*
-A solução linear
+Subsequências Não-Contíguas
 \end_layout
 
-\begin_layout Subsubsection
-Análise dos tempos de execução
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tamanho da entrada
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Algoritmo Quadrático
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $O(N^{2})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10^{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10^{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10^{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10^{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tempos de execução
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Exercício Selecionado 3
+\end_layout
+
+\begin_layout Subsubsection*
+Stingy SAT
+\end_layout
+
+\begin_layout Standard
+Este exercício foi extraído do livro 
+\emph on
+Algorithms
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Dasgupta2006"
+
+\end_inset
+
+, 
+\emph default
+capítulo 6,STINGY SAT é o nome dado ao seguinte problema: Dado um conjunto
+ de cláusulas (cada cláusula é uma disjunção de literais) e um inteiro ‘k’,
+ encontre uma solução que satisfaça o conjunto de cláusulas com no máximo
+ k variáveis iguais a true, se esta solução existir.
+\end_layout
+
+\begin_layout Subsubsection*
+Discussão
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename sat.png
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Redução SAT-STINGY SAT
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Implementação
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1717,6 +2810,17 @@ def schedule(jobs):
 
 	return(mergesort_inverse(jobs))
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "bibliografia"
+options "abntex2-num"
 
 \end_inset
 
