@@ -4969,6 +4969,22 @@ Conclusão
 \end_layout
 
 \begin_layout Standard
+Em resumo, esse artigo aborda os diferentes conceitos estudados no curso
+ de Estutura de Dados e Algoritmos de uma forma não convencional, pois busca-se
+ a contextualização de problemas reais com a abordagem de soluções de problemas
+ clássicos.
+ Além disso, busca discutir problemas não tratáveis de forma criteriosa,
+ de modo a explorar o tema de algoritmos desde os casos mais simples, até
+ o mais complexos, sem deixar de encarar com relevância a aplicação das
+ resoluções discutidas a possíveis problemas reais, como no caso do dataset
+ que aborda dados de educação superior no Brasil.
+ Dessa forma, a oportunidade de escolha dos exercícios nos livros citados
+ na referência bibliográfica e a busca da relação entre tais exercícios
+ e a aplicação prática pode ser apontada como força motriz das discussões
+ vistas aqui.
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -4982,22 +4998,6 @@ indent
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Em resumo, esse artigo aborda os diferentes conceitos estudados no curso
- de Estuturas de Dados e Algoritmos de uma forma não convencional, pois
- busca-se a contextualização de problemas reais com a abordagem de soluções
- de problemas clássicos.
- Além disso, busca discutir problemas não tratáveis de forma criteriosa,
- de modo a explorar o tema de algoritmos desde os casos mais simples, até
- o mais complexos, sem deixar de encarar com relevância a aplicação das
- resoluções discutidas a possíveis problemas encontrados em situações reais,
- como no caso do dataset que aborda dados de educação superior no Brasil.
- Dessa forma, a oportunidade de escolha dos exercícios nos livros citados
- na referência bibliográfica e a busca da relação entre tais exercícios
- e a aplicação prática pode ser apontada como força motriz das discussões
- vistas aqui.
 \end_layout
 
 \begin_layout Standard
