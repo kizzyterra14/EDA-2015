@@ -1826,7 +1826,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+137 microsegundos
 \end_layout
 
 \end_inset
@@ -1835,7 +1835,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+128 microsegundos
 \end_layout
 
 \end_inset
@@ -1844,7 +1844,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+143 microsegundos
 \end_layout
 
 \end_inset
@@ -1867,7 +1867,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+12 milésimos
 \end_layout
 
 \end_inset
@@ -1876,7 +1876,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+12 milésimos
 \end_layout
 
 \end_inset
@@ -1885,7 +1885,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+12 milésimos
 \end_layout
 
 \end_inset
@@ -1908,7 +1908,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+36 milésimos
 \end_layout
 
 \end_inset
@@ -1917,7 +1917,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+17 milésimos
 \end_layout
 
 \end_inset
@@ -1926,7 +1926,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+13 milésimos
 \end_layout
 
 \end_inset
@@ -1949,7 +1949,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-13 segundos
+15 segundos
 \end_layout
 
 \end_inset
@@ -1958,7 +1958,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-154 milésimos
+117 milésimos
 \end_layout
 
 \end_inset
@@ -1967,7 +1967,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-25 milésimos
+46 milésimos
 \end_layout
 
 \end_inset
@@ -3508,6 +3508,22 @@ class CNF:
 \end_layout
 
 \begin_layout Standard
+As reduções implementadas são apresentadas a seguir, a redução de SAT para
+ STINGY SAT foi implementada segundo a equivalência entre as entradas explicada
+ anteriormente.
+ A idéia da redução do problema STINGY SAT para o SAT consiste de analisar
+ as valorações que satisfazem a fórmula fornecida como entrada, retornadas
+ pelo SAT e verificar se para alguma dessas valorações existem no máximo
+ 
+\emph on
+k 
+\emph default
+variáveis verdadeiras.
+ Se houver, então o STINGY SAT deve retornar verdadeiro, se não houver deve
+ retornar falso.
+\end_layout
+
+\begin_layout Standard
 \begin_inset listings
 inline false
 status open
@@ -3561,8 +3577,57 @@ def reduceStingySatToSAT(clause, k):
 
 \end_layout
 
+\begin_layout Standard
+Finalmente, apresenta-se o método resolvedor de SAT no qual utiliza-se o
+ método 
+\emph on
+itersolve
+\emph default
+ do pacote 
+\emph on
+pycosat, 
+\emph default
+este método retorna todas as valorações que satisfazem uma determinada fórmula.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def SAT(clause): 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	return list(pycosat.itersolve(clause))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Conclusão
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

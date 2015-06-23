@@ -1826,7 +1826,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+137 microsegundos
 \end_layout
 
 \end_inset
@@ -1835,7 +1835,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+12 milésimos
 \end_layout
 
 \end_inset
@@ -1844,7 +1844,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+12 milésimos
 \end_layout
 
 \end_inset
@@ -1867,7 +1867,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+12 milésimos
 \end_layout
 
 \end_inset
@@ -1876,7 +1876,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+12 milésimos
 \end_layout
 
 \end_inset
@@ -1885,7 +1885,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+12 milésimos
 \end_layout
 
 \end_inset
@@ -1908,7 +1908,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+36 milésimos
 \end_layout
 
 \end_inset
@@ -1917,7 +1917,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+17 milésimos
 \end_layout
 
 \end_inset
@@ -1926,7 +1926,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+13 milésimos
 \end_layout
 
 \end_inset
@@ -1949,7 +1949,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-13 segundos
+15 segundos
 \end_layout
 
 \end_inset
@@ -1958,7 +1958,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-154 milésimos
+117 milésimos
 \end_layout
 
 \end_inset
@@ -1967,7 +1967,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-25 milésimos
+46 milésimos
 \end_layout
 
 \end_inset
@@ -3247,10 +3247,280 @@ do Python o qual implementa a resolução do problema SAT.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $(A\vee B\vee C)\wedge(A\, equivale\, a\,[]$
+\begin_inset Formula 
+\[
+(A\vee B\vee C)\wedge(\lnot A\vee\lnot B\vee C)\, equivale\, a\;[\,[1,2,3],\,[-1,-2,3]\,]
+\]
+
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Para tornar a construção das fórmulas mais intuitivas, implementou-se uma
+ classe para construção das fórmulas, de forma que o usuário entre com a
+ seguinte fórmula:
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+clause = cnf.AND(cnf.OR("A",cnf.NOT("E"),"D"),cnf.OR(cnf.NOT("A"),"E","C","D"),cnf.OR(
+cnf.NOT("C"),cnf.NOT("B")))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta seja transformada em uma entrada equivalente do pacote 
+\emph on
+pycosat:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+clause =[[1,-5,4],[-1,5,3,4],[-3,-2]] 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Os métodos implementados são apresentados a seguir e cosistem de um simples
+ parser da cláusula de entrada, de forma que cada operação(AND, OR E NOT)
+ foi implementada como um método que pode receber um número de parâmetros
+ variável, tal que os parâmetros são strings ou um valor de retorno de uma
+ outra operação.
+ Os métodos compõe uma classe denominada CNF que possui uma variável chamada
+ 
+\emph on
+variables 
+\emph default
+que é um dicionário que relaciona os literais fornecidos em forma de string
+ com os inteiros a serem passados para o resolvedor do 
+\emph on
+pycosat.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class CNF: 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	def __init__(self): 		
+\end_layout
+
+\begin_layout Plain Layout
+
+		self.variables = {}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	def AND(self, *args): 		
+\end_layout
+
+\begin_layout Plain Layout
+
+		clause = [] 		
+\end_layout
+
+\begin_layout Plain Layout
+
+		for arg in args: 			
+\end_layout
+
+\begin_layout Plain Layout
+
+			if isinstance(arg, list): 				
+\end_layout
+
+\begin_layout Plain Layout
+
+				clause.append(arg) 			
+\end_layout
+
+\begin_layout Plain Layout
+
+			else: 				
+\end_layout
+
+\begin_layout Plain Layout
+
+				return "Invalid CNF format" 		
+\end_layout
+
+\begin_layout Plain Layout
+
+		return clause
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def OR(self, *args): 		
+\end_layout
+
+\begin_layout Plain Layout
+
+		clause=[] 		
+\end_layout
+
+\begin_layout Plain Layout
+
+		for arg in args: 			
+\end_layout
+
+\begin_layout Plain Layout
+
+			if isinstance(arg, int): 				
+\end_layout
+
+\begin_layout Plain Layout
+
+				clause.append(arg) 			
+\end_layout
+
+\begin_layout Plain Layout
+
+			else: 				
+\end_layout
+
+\begin_layout Plain Layout
+
+				if isinstance(arg, basestring): 					
+\end_layout
+
+\begin_layout Plain Layout
+
+					if not arg in self.variables: 						
+\end_layout
+
+\begin_layout Plain Layout
+
+						self.variables[arg] = len(self.variables) 					
+\end_layout
+
+\begin_layout Plain Layout
+
+					clause.append(self.variables[arg]) 				
+\end_layout
+
+\begin_layout Plain Layout
+
+				else: 					
+\end_layout
+
+\begin_layout Plain Layout
+
+					return "Invalid CNF format" 		
+\end_layout
+
+\begin_layout Plain Layout
+
+		return clause
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def NOT(self,variable): 		
+\end_layout
+
+\begin_layout Plain Layout
+
+		if isinstance(variable, basestring): 			
+\end_layout
+
+\begin_layout Plain Layout
+
+			if not variable in self.variables: 				
+\end_layout
+
+\begin_layout Plain Layout
+
+				self.variables[variable] = len(self.variables) 			
+\end_layout
+
+\begin_layout Plain Layout
+
+			return -self.variables[variable] 		
+\end_layout
+
+\begin_layout Plain Layout
+
+		else: 			
+\end_layout
+
+\begin_layout Plain Layout
+
+			return "Invalid CNF format"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	def NUMBER_OF_VARIABLES(self): 		
+\end_layout
+
+\begin_layout Plain Layout
+
+		return len(self.variables)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As reduções implementadas são apresentadas a seguir, a redução de SAT para
+ STINGY SAT foi implementada segundo a equivalência entre as entradas explicada
+ anteriormente.
+ A idéia da redução do problema STINGY SAT para o SAT consiste de analisar
+ as valorações que satisfazem a fórmula fornecida como entrada, retornadas
+ pelo SAT e verificar se para alguma dessas valorações existem no máximo
+ 
+\emph on
+k 
+\emph default
+variáveis verdadeiras.
+ Se houver, então o STINGY SAT deve retornar verdadeiro, se não houver deve
+ retornar falso.
 \end_layout
 
 \begin_layout Standard
@@ -3307,8 +3577,57 @@ def reduceStingySatToSAT(clause, k):
 
 \end_layout
 
+\begin_layout Standard
+Finalmente, apresenta-se o método resolvedor de SAT no qual utiliza-se o
+ método 
+\emph on
+itersolve
+\emph default
+ do pacote 
+\emph on
+pycosat, 
+\emph default
+este método retorna todas as valorações que satisfazem uma determinada fórmula.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def SAT(clause): 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	return list(pycosat.itersolve(clause))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Conclusão
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
