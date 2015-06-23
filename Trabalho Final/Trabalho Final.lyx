@@ -77,7 +77,7 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\listings_params "aboveskip={0.5cm},basicstyle={\small\ttfamily},breaklines=true,captionpos=b,commentstyle={\itshape\color{gray}},keywords={import,from,class,def,for,while,if,is,in,elif,else,not,and,or,print,break,continue,return,access,as,,del,except,exec,finally,global,lambda,pass,print,raise,try,assert},keywordstyle={\color{keywords}\bfseries},ndkeywords={len,range, None},ndkeywordstyle={\color{red4}\bfseries},stringstyle={\color{Strings}},tab=true,tabsize=3,xleftmargin={1cm},xrightmargin={1cm}"
+\listings_params "aboveskip={0.5cm},basicstyle={\small\ttfamily},breaklines=true,captionpos=b,commentstyle={\itshape\color{gray}},keywords={import,from,class,def,for,while,if,is,in,elif,else,not,and,or,print,break,continue,return,access,as,,del,except,exec,finally,global,lambda,pass,print,raise,try,assert},keywordstyle={\color{keywords}\bfseries},ndkeywords={len,range, None},ndkeywordstyle={\color{red4}\bfseries},stringstyle={\color{Strings}},tab=true,tabsize=3,xleftmargin={0.5cm},xrightmargin={0.5cm}"
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -294,7 +294,11 @@ capítulo 6, sendo o exercício 6.1.
  dinâmica: subsequência de soma máxima.
  Este problema consiste de encontrar a subsequência de números com maior
  soma dentro de lista de números unidimensional dada.
- Este problema possui duas principais variações unidimensionais: na primeira,
+ 
+\end_layout
+
+\begin_layout Standard
+Este problema possui duas principais variações unidimensionais: na primeira,
  consideram-se apenas subsequências contíguas da lista de números; na segunda,
  por sua vez, as subsequências podem envolver números que não são contíguos.
  
@@ -308,7 +312,11 @@ Brown University,
 \emph default
 como um modelo simplificado do problema de estimativa de padrões por máxima
  verossimilhança em imagem digitalizadas.
- O problema original do estimador de máxima verossimilhança é na verdade
+ 
+\end_layout
+
+\begin_layout Standard
+O problema original do estimador de máxima verossimilhança é na verdade
  um problema de subsequência de soma máxima bidimensional, mas foi proposto
  por Grenander em sua forma simplificada (unidimensional) visto que o problema
  bidimensional exigia mais tempo para ser resolvido.
@@ -782,7 +790,11 @@ indent
 A idéia para esta implementação é utilizar a técnica de programação dinâmica,
  isto é, construir a solução de um problema através da solução de subproblemas
  associados.
- Neste contexto, a principal idéia é considerar que para cada elemento I
+ 
+\end_layout
+
+\begin_layout Standard
+Neste contexto, a principal idéia é considerar que para cada elemento I
  da lista de números a solução procurada (subsequência contígua de soma
  máxima) pode ser encontrada a partir da solução calculada para o elemento
  anteiror I - 1(se existir), beneficiando-se do fato de que duas somas parciais
@@ -905,7 +917,11 @@ para calcular a solução do problema para cada elemento I (em cada iteração
 \end_inset
 
 ).
- Uma vez encontrada a melhor solução para a iteração as variáveis auxiliares
+ 
+\end_layout
+
+\begin_layout Standard
+Uma vez encontrada a melhor solução para a iteração as variáveis auxiliares
  são devidamente atualizadas: caso a subsoma encotrada ao final de uma determina
 da iteração (
 \emph on
@@ -1260,7 +1276,10 @@ subseqMax(i)=max\{max\{subseqMax(k)\cup elemento(i);\, k<i\},\; elemento(i)\}
 Isto é, a subsequência de soma máxima para uma dada iteração I é calculada
  comparando as somas das subsequências encontradas nas iterações anteriores
  adicionadas do elemento I com o próprio elemento I.
- Estas comparações executadas a cada iteração tornam esta solução quadrática,
+\end_layout
+
+\begin_layout Standard
+Estas comparações executadas a cada iteração tornam esta solução quadrática,
  uma vez que o número de comparações por iteração é (I-1) e são realizadas
  N iterações no total, onde N é o tamanho da entrada, logo a complexidade
  de tempo do algoritmo é 
@@ -1546,10 +1565,6 @@ def quadratic(L):
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 	maxSoFar_index = 0
 \end_layout
 
@@ -1585,11 +1600,6 @@ def quadratic(L):
 
 \begin_layout Plain Layout
 
-	
-\end_layout
-
-\begin_layout Plain Layout
-
 	for i in range(1,sizeL):    
 \end_layout
 
@@ -1620,12 +1630,7 @@ def quadratic(L):
 
 \begin_layout Plain Layout
 
-			maxSoFar_index = i 
-\end_layout
-
-\begin_layout Plain Layout
-
-          
+			maxSoFar_index = i     
 \end_layout
 
 \begin_layout Plain Layout
@@ -1636,10 +1641,6 @@ def quadratic(L):
 \begin_layout Plain Layout
 
 	max_subsequence=[]
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -1655,10 +1656,6 @@ def quadratic(L):
 \begin_layout Plain Layout
 
 		k = subsequence[k]
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -1826,7 +1823,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-137 microsegundos
+
 \end_layout
 
 \end_inset
@@ -1835,7 +1832,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-128 microsegundos
+
 \end_layout
 
 \end_inset
@@ -1844,7 +1841,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-143 microsegundos
+
 \end_layout
 
 \end_inset
@@ -1867,7 +1864,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-12 milésimos
+
 \end_layout
 
 \end_inset
@@ -1876,7 +1873,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-12 milésimos
+
 \end_layout
 
 \end_inset
@@ -1885,7 +1882,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-12 milésimos
+
 \end_layout
 
 \end_inset
@@ -1908,7 +1905,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-36 milésimos
+
 \end_layout
 
 \end_inset
@@ -1917,7 +1914,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-17 milésimos
+
 \end_layout
 
 \end_inset
@@ -1926,7 +1923,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-13 milésimos
+
 \end_layout
 
 \end_inset
@@ -1949,7 +1946,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-15 segundos
+
 \end_layout
 
 \end_inset
@@ -1958,7 +1955,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-117 milésimos
+
 \end_layout
 
 \end_inset
@@ -1967,7 +1964,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-46 milésimos
+
 \end_layout
 
 \end_inset
@@ -1999,7 +1996,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-6 segundos
+
 \end_layout
 
 \end_inset
@@ -2008,7 +2005,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-88 milésimos
+
 \end_layout
 
 \end_inset
@@ -2610,26 +2607,66 @@ indent
 \end_layout
 
 \begin_layout Standard
-Entrada: Uma lista de jobs representados por tuplas do tipo 
+A entrada do problema é uma lista de jobs representados por tuplas do tipo
+ 
 \begin_inset Formula $(p_{i},f_{i})$
 \end_inset
 
- em que o primeiro elmento é o tempo que o supercomputador leva para processar
- o job e o segundo, é o tempo de execução em um PC.
+ em que o primeiro elemento é o tempo que o supercomputador leva para processar
+ o job e o segundo é o tempo de execução que PC escolhido leva para análise
+ tais dados.
 \end_layout
 
 \begin_layout Standard
-Saída: Uma lista de jobs -representados por tuplas do tipo 
+Já a saída é uma lista de jobs -representados por tuplas do tipo 
 \begin_inset Formula $(p_{i},f_{i})$
 \end_inset
 
 - na ordem ótima em que devem ser executados para minimizar o tempo total
  de execução.
+ Isto posto, vamos analisar as funções criadas para resolução do problema.
+\end_layout
+
+\begin_layout Standard
+É importante destacar que estamos implementando um algoritmo guloso, que
+ já teve sua otimalidade demonstrada na seção anterior.
+ Após a prova de otimalidade do algoritmo, a implementação consiste em uma
+ variação do mergesort, pois estamos interessados na ordem descrescente
+ de elementos que serão expostos na lista de tuplas.
  
 \end_layout
 
 \begin_layout Standard
---Funcao auxiliar criada para selecionar elementos da tupla que serao comparados
+Para tornar mais claro o argumento, vamos expor um exemplo de como será
+ o dado de input.
+ A lista a seguir expõe tuplas com os valores de tempo tomado pelos supercomputa
+dores para processamento dos dados na primeira casa e a segunda casa leva
+ o tempo tomado pelos PCs para análise dos dados em questão.
+ 
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+lista = [(24,5),(31,9),(57,22),(39,56),(5,1),(82,43)]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A primeira função analisada corresponde àquela responsável por comparar
+ duas tuplas no caso base e é denominada de 
+\emph on
+compare
+\emph default
+.
+ Ela toma os valores dos tempos do PC (i.e.
+ segunda casa) como parâmetro.
+ Essa função tem custo de complexidade O(1).
 \end_layout
 
 \begin_layout Standard
@@ -2653,8 +2690,21 @@ def compare(a, b):
 \end_layout
 
 \begin_layout Standard
-Funcao merge que faz a operacao de sort ao concatenar o maior elemento #com
- os demais elementos da lista 
+A segunda função analisada é a 
+\emph on
+merge
+\emph default
+ modificada.
+ A função 
+\emph on
+merge
+\emph default
+, revisitada pelo problema, expõe como caso base o controle de quando umas
+ das listas possui tamanho nulo, retornando a outra lista de input.
+ Até aqui a estrutura do algoritmo é semelhante, mas a partir do caso base,
+ o nossa função de comparação faz do argumento recursivo retornar os elementos
+ em ordem inversa, o que nos proporciona ordenar os jobs dos PCs em ordem
+ decrescente, como segue: 
 \end_layout
 
 \begin_layout Standard
@@ -2694,8 +2744,8 @@ def merge(lista_rst, lista_nd):
 
 \begin_layout Plain Layout
 
-	#Modificacao para iterar entre tuplas e ordenar em ordem decrescente  
-       	#dos valores dos jobs dos PCs         
+	#Modificacao para iterar entre tuplas e ordenar em ordem decrescente dos
+ valores dos jobs dos PCs         
 \end_layout
 
 \begin_layout Plain Layout
@@ -2738,13 +2788,33 @@ def merge(lista_rst, lista_nd):
 			return(temp)
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
 
-\begin_layout Plain Layout
-
+\begin_layout Standard
+Por fim, a função 
+\emph on
+mergesort_inverse
+\emph default
+ é responsável por receber a lista exposta acima e chamar a função 
+\emph on
+merge
+\emph default
+ aplicada ao 
+\emph on
+mergesort_inverse 
+\emph default
+da metade das listas.
+ Esse argumento possui complexidade da ordem de O(nlogn) e retorna os tempos
+ dos jobs dos PCs em ordem decrescente.
 \end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Plain Layout
 
@@ -2787,34 +2857,42 @@ def mergesort_inverse(lista):
 
 \end_layout
 
-\begin_layout Standard
-deve-se ordenar jobs de maneira decrescente nos tempos de trabalho dos PCs
- 
+\begin_layout Subsubsection
+Conclusão
 \end_layout
 
 \begin_layout Standard
-\begin_inset listings
-inline false
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-#jobs = [(24,5),(31,9),(57,22),(39,56),(5,1),(82,43)]
-\end_layout
 
-\begin_layout Plain Layout
-
-def schedule(jobs):    
-\end_layout
-
-\begin_layout Plain Layout
-
-	return(mergesort_inverse(jobs))
+\backslash
+indent
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Destaca-se que esse problema teve sua escolha aclamada por abordar conceitos
+ de Algoritmos Gulosos e de Divisão e Conquista, sendo a prova de otimalidade
+ fundamentada pelo primeiro e a implementação pelo segundo.
+ Dado que devemos minimizar o tempo dos jobs dos computadores, possuímos
+ uma função objetivo que deve ser minimizada e, para isso, utilizamos os
+ conceitos de algoritmos gulosos, de modo a escolher um critério, que será
+ utilizado por passo, minimizando o tempo de processamento em questão.
+ 
+\end_layout
+
+\begin_layout Standard
+Ao concluir a prova de otimalidade, é fácil ver que a implementação se resume
+ ao ordenamento dos dados de input, o que nos leva à luz da implementação
+ de um Mergesort modificado de custo O(nlogn) de complexidade.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -2849,20 +2927,15 @@ Esse exercício foi extraído do livro
 \emph on
 Algorithm Design
 \emph default
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Kleinberg2005"
-
-\end_inset
-
-
+ de 
 \emph on
-, 
+John Kleinberg
 \emph default
-capítulo 5, que aborda o tema de Divisão e Conquista, sendo o exercício
- de número 3.
- 
+ e de 
+\emph on
+Eva Tardos, 
+\emph default
+capítulo 5, sendo o exercício de número 3 o selecionado.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2909,14 +2982,8 @@ Toma dois cartões, faz algumas contas e determina se os cartões são equivalen
 Isto posto, a pergunta é a seguinte: Entre a coleção de N cartões, existe
  um conjunto maior que N/2 cartões que acusarão equivalência no teste? Considera
 -se a hipótese de a única operação possível que se possa fazer para testar
- os cartões seja pegar dois deles, plugar na máquina, e dai verificar a
+ os cartões seja pegar dois deles, plugar na máquina, e daí verificar a
  equivalência.
- Mostre como decidir a resposta dessa questão com complexidade de tempo
- igual ou inferior a
-\begin_inset Formula $O(n\, logn)$
-\end_inset
-
- chamadas do teste de equivalência.
  
 \end_layout
 
@@ -2924,6 +2991,1216 @@ Isto posto, a pergunta é a seguinte: Entre a coleção de N cartões, existe
 Nossa abordagem no presente artigo será a de resolução do exercício proposto
  pelo livro, para posteriormente aplicarmos essa resolução a um problema
  real, evolvendo um dataset com dados de educação superior no Brasil.
+\end_layout
+
+\begin_layout Subsubsection
+Abordagem Linear
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Inspirado em um problema real, buscamos resolver o problema exposto no enunciado
+ através de uma solução linear, tomando algumas hipóteses simplicaficadoras
+ para facilitar a análise.
+ O primeiro passo consiste na estruturação do dado de forma conveninente,
+ para que a partir do dado estruturado sejamos capazes de capturar os valores
+ que apresentam igualdade com custo de complexidade linear.
+ 
+\end_layout
+
+\begin_layout Standard
+Após a estruturação do dado vamos explicar como se deu a construção das
+ funções responsáveis por coparação dos dados, contagem dos casos com igualdade,
+ e da função mestre, responsável por chamar todas as demais e verificar
+ sob determinado parâmetro se há fraude.
+ Destaca-se que nossa solução usará o zero como parâmetro ao invés de metade
+ da lista, pois somos capazes de retornar o número de fraudes.
+ 
+\end_layout
+
+\begin_layout Standard
+Assim caso esse número seja diferente de zero, a função retorna um valor
+ lógico 
+\emph on
+True, 
+\emph default
+além de retornar 
+\emph on
+False
+\emph default
+ caso contrário.
+ A pertinência do input parâmetro consiste na extensão do algoritmo para
+ casos mais gerais comparados ao exercício em questão.
+ Para resolver o exercício proposto basta-se truncar o parâmetro no valor
+ zero e se interessar apenas no valor lógico.
+ No entanto, em outras aplicações pode ser pertinente tolerar um certo nível
+ maior do que zero de 
+\begin_inset Quotes eld
+\end_inset
+
+fraudes
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Implementação
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Com efeito, o algoritmo leva em consideração algumas hipóteses simplificadoras.
+ Para que seja linear e retorne o valor desejado, os dados, aqui representando
+ códigos, quando iguais, e em número par, devem estar justapostos em pares,
+ não importando a posição de tais pares.
+ Caso haja um número ímpar de determinado código, deve-se justapor o número
+ par máximo de códigos em pares e o valor restante deve ser justaposto com
+ outro valor que tenha sobrado de uma situação semelhante, isto é, de um
+ conjunto de códigos iguais ímpares.
+ Caso não haja esse outro valor, deve-se justapor o valor que tenha sobrado
+ com a variável nula.
+\end_layout
+
+\begin_layout Standard
+A seguir se expõe como é feita a construção da lista, atendendo as condições
+ descritas acima.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+lst = [1201,1201,1308,1308,1201,1403,1308] 
+\end_layout
+
+\begin_layout Plain Layout
+
+lst_pares = []
+\end_layout
+
+\begin_layout Plain Layout
+
+pare = len(lst) + 1 
+\end_layout
+
+\begin_layout Plain Layout
+
+teste_impar = len(lst) % 2 != 0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if teste_impar:     
+\end_layout
+
+\begin_layout Plain Layout
+
+	pare = len(lst) 
+\end_layout
+
+\begin_layout Plain Layout
+
+	cont = 1 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+while cont != pare:     
+\end_layout
+
+\begin_layout Plain Layout
+
+	lst_pares.append((lst[cont - 1],lst[cont]))     
+\end_layout
+
+\begin_layout Plain Layout
+
+	cont += 2
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if teste_impar:     
+\end_layout
+
+\begin_layout Plain Layout
+
+	lst_pares.append((lst[len(lst) - 1], None)) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A lista construída para o exemplo ilustrado acima tem o seguinte formato:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+[(1201, 1201), (1308, 1308), (1201, 1403), (1308,None)]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Após a construção da lista, vamos mostrar como se deu a construção da função
+ responsável por comparar os valores dos códigos analisados.
+ A função 
+\emph on
+compara, 
+\emph default
+quando chamada, toma dois valores e verifica sua igualdade.
+ Caso haja igualdade ela retorna o valor lógico 
+\emph on
+True
+\emph default
+ e retorna 
+\emph on
+False 
+\emph default
+caso contrário.
+ Essa função possui custo de complexidade da ordem O(1).
+ Segue o código:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def compara(valor1, valor2):     
+\end_layout
+
+\begin_layout Plain Layout
+
+	if valor1 == valor2:         
+\end_layout
+
+\begin_layout Plain Layout
+
+		return(True)     
+\end_layout
+
+\begin_layout Plain Layout
+
+	else:         
+\end_layout
+
+\begin_layout Plain Layout
+
+		return(False)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Além da função compara, se faz necessário definir outras duas funções de
+ teste.
+ A primeira seria a função 
+\emph on
+testa_igual 
+\emph default
+e a segunda seria a 
+\emph on
+testa_dif.
+ 
+\emph default
+A construção dessas funções se mostrou necessária, pois dado que possuímos
+ uma lista de tuplas, temos interesse em criar uma lista com tuplas que
+ representem apenas pares iguais, ou que tenham um par entra um código e
+ um valor nulo e, outra lista, que apresente apenas pares com valores diferentes
+ entre si.
+ Dai, de posse dessas funções, basta utilizarmos o argumento linear filter,
+ que será explicado com mais calma a seguir, para que sejamos capazes de
+ criar as listas citadas.
+ É importante destacar que ambas função possuem custo de complexidade O(1).
+ Seguem-nas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def testa_igual(lista):     
+\end_layout
+
+\begin_layout Plain Layout
+
+	if lista[0] == lista[1]:         
+\end_layout
+
+\begin_layout Plain Layout
+
+		return(lista[0])     
+\end_layout
+
+\begin_layout Plain Layout
+
+	elif lista[0] is None:         
+\end_layout
+
+\begin_layout Plain Layout
+
+		return(lista[1])     
+\end_layout
+
+\begin_layout Plain Layout
+
+	elif lista[1] is None:         
+\end_layout
+
+\begin_layout Plain Layout
+
+		return(lista[0])
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def testa_dif(lista):     
+\end_layout
+
+\begin_layout Plain Layout
+
+	if lista[0] != lista[1]:         
+\end_layout
+
+\begin_layout Plain Layout
+
+		return((lista[0],lista[1]))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nesse passo, vamos descrever a construção da função de maior importância
+ da implementação em questão, a função 
+\emph on
+contagem
+\emph default
+.
+ Será por intermédio dessa função que seremos capazes de contar os códigos
+ que extrapolam o número permitido, e assim, retornarmos o número de fraudes.
+ 
+\end_layout
+
+\begin_layout Standard
+Dado que o input são as listas, já citadas, dos pares de valores iguais
+ (restante) e a dos pares de valores distindos (deletado),
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+O nome restante se dá pelo fato de o argumento funcional que constrói tal
+ lista, retornar apenas os valores restantes que atendem ao critério de
+ igualdade seus valores, critério esse definido através da construção da
+ função 
+\emph on
+testa_igual.
+
+\emph default
+ Enquanto o nome deletado recorre justamente do fato de que esses são os
+ valores que não estão justpostos em igualdade sendo deletados da primeira
+ lista.
+\end_layout
+
+\end_inset
+
+o primeiro passo da função 
+\emph on
+contagem
+\emph default
+ decorre de tomar tais listas e desconstruí-las de modo a criar duas novas
+ listas com os valores dos casos em que já se tem pares definidos (restante_list
+a) ou um valor que tenha sobrado, para o caso de a lista ter tamanho ímpar,
+ e a outra lista ser justamente os valores que não estavam justapostas aos
+ seus pares (deletado_lista).
+ 
+\end_layout
+
+\begin_layout Standard
+A partir daí, toma-se cada valor da primeira lista citada(restante_lista)
+ e busca-se na segunda lista citada (deletado_lista) por repetições.
+ Caso uma repetição seja encontrada, conta-se uma fraude e deleta-se o valor
+ encontrado da lista de busca (i.e.
+ deletado_lista).
+ Dessa forma, no primeiro passo tem-se complexidade O(n/2), no segundo O(n/4),
+ e assim por diante, além de O(n-1) para realização dos testes, dando um
+ total de no máximo O(2n) de complexidade, pro pior caso de se percorrer
+ toda a lista duas vezes.
+ Segue o código:
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def contagem(restante, deletado):     
+\end_layout
+
+\begin_layout Plain Layout
+
+	repeticoes = 0     
+\end_layout
+
+\begin_layout Plain Layout
+
+	restante_lista = []     
+\end_layout
+
+\begin_layout Plain Layout
+
+	deletado_lista = []     
+\end_layout
+
+\begin_layout Plain Layout
+
+	#necessario transformas as listas que estavam em tuplas em apenas listas,
+ para manter linearidade.
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+	for valor_tupla in restante:         
+\end_layout
+
+\begin_layout Plain Layout
+
+		restante_lista.append(valor_tupla[0])     
+\end_layout
+
+\begin_layout Plain Layout
+
+	for valor_tupla in deletado:         
+\end_layout
+
+\begin_layout Plain Layout
+
+		deletado_lista.extend([valor_tupla[0],valor_tupla[1]])     
+\end_layout
+
+\begin_layout Plain Layout
+
+	for valor in restante_lista:         
+\end_layout
+
+\begin_layout Plain Layout
+
+		cont = 0         
+\end_layout
+
+\begin_layout Plain Layout
+
+		if valor is None:             
+\end_layout
+
+\begin_layout Plain Layout
+
+			next         
+\end_layout
+
+\begin_layout Plain Layout
+
+		while cont != len(deletado_lista):             
+\end_layout
+
+\begin_layout Plain Layout
+
+			if compara(valor,deletado_lista[cont]) is True:                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			repeticoes += 1                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			deletado_lista.remove(deletado_lista[cont])                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			cont -= 1             
+\end_layout
+
+\begin_layout Plain Layout
+
+		cont += 1     
+\end_layout
+
+\begin_layout Plain Layout
+
+	return(repeticoes)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dai, a função 
+\emph on
+teste 
+\emph default
+é responsável por receber a lista de tuplas, criada no primeiro passo, e
+ o parâmetro de comparação e a partir dai chamar as funções já explicadas
+ de modo a encontrar a solução desejada, que retornar se há fraude, e o
+ número de fraudes em questão.
+ 
+\end_layout
+
+\begin_layout Standard
+Através de um argumento funcional denominado filter, na linguagem python,
+ toma-se a lista de input e utiliza-se o critério da função 
+\emph on
+testa_igual 
+\emph default
+para criar a função das tuplas de códigos iguais justapostos, que será a
+ variável restante demandada pela função 
+\emph on
+contagem, 
+\emph default
+enquanto o mesmo argumento, toma a mesma lista, e utilza do critério da
+ função 
+\emph on
+testa_dif, 
+\emph default
+para criar a lista das tuplas que não apresentam elementos iguais, lista
+ que será utilizada pela funão contagem no input denominado deletado.
+ 
+\end_layout
+
+\begin_layout Standard
+A partir daí, a função contagem devolve o número de fraudes, caso haja,
+ e assim a função 
+\emph on
+teste 
+\emph default
+compara com o parâmetro dado, retornando o argumento lógico 
+\emph on
+True, 
+\emph default
+caso o extrapole e o argumento 
+\emph on
+False,
+\emph default
+ caso contrário.
+ Além disso a função retorna o número de 
+\begin_inset Quotes eld
+\end_inset
+
+fraudes
+\begin_inset Quotes erd
+\end_inset
+
+ encontradas.
+\end_layout
+
+\begin_layout Standard
+A função criada resolve o problema exposto pelo livro, além de apresentar
+ um arcobouço geral, que porporciona a aplicação a outros tipos de análise.
+ Como será visto a seguir, esse código será alterado, e talvez até simplificado,
+ para resolução de um problema real, urgido durante a análise de um dataset.
+\end_layout
+
+\begin_layout Subsubsection
+Dataset
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Surgiu o desafio de analisar um dataset que apresenta dados de docentes
+ brasileiros em atividade em todos os programas de matemática registrados
+ na CAPES.
+ O desafio consiste em analisar quantos docentes que pesquisam e lecionam
+ no mesmo centro que se titularam.
+ Essa pergunta é pertinente pois existe uma recomendação da CAPES de que
+ a proporção de professores que se titularam e são pesquisadores de um dado
+ programa não seja maior que dois terços do quadro.
+ 
+\end_layout
+
+\begin_layout Standard
+Dessa forma, acionamos uma base de dados que nos apresenta as instituições
+ as quais os docentes se titularam, e os centros que os mesmos trabalharam
+ entre 2004 e 2012.
+ Nosso desafio foi comparar os casos, verificar a igualdade entre eles e
+ reportar se o numero de docentes nos programas de matemática no Brasil
+ violam a regra.
+ Lançamos mão de analisar instituicão por instituição por fugir do escopo
+ da análise, isto é, da contextualização entre o exercicio proposto pelo
+ livro e o problema real que nos propusemos a solucionar.
+\end_layout
+
+\begin_layout Standard
+Um dos desafios da base está no fato de que as strings que correspondem
+ às instituições que os docentes se titularam não estão expostas da mesma
+ forma que as strings dos centros que os docentes compõem nos anos da análise.
+ Assim, se fez necessário um tratamento das strings e a criação de uma função
+ responsável por comparações que ao invés de levar um argumento lógico como
+ balizador, levou em consideração a função de Levenshtein para verificar
+ a proximidade das strings.
+ 
+\end_layout
+
+\begin_layout Standard
+No entanto, comparada à abordagem linear exposta acima, o fato de o dataset
+ apresentar as respectivas instituições em que os professores atuam nos
+ anos de análise já casadas com as instituições de titulação facilita a
+ análise.
+ Dito de outra forma, não existem pares desencontrados, ou valores ímpares,
+ pois cada linha corresponde a um docente diferente e busca-se encontrar
+ o número de semelhanças sobre um determinado critério.
+ 
+\end_layout
+
+\begin_layout Standard
+Com isso, a análise do dataset, teve como desafio a aplicação do caso abstrato
+ ao caso real, por intermédio do relaxamento de algumas hipóteses lançadas
+ na abordagem linar acima.
+ Segue um recorte do dataset para melhor expor a natureza do problema:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captura de Tela 2015-06-22 às 19.43.57.png
+	scale 35
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Recorte do Dataset
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Implementação
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Isto posto, buscamos uma versão linear do algoritmo de resolução da questão
+ proposta no livro.
+ Pois somos capazes de criar uma lista de tuplas
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Estrutura de dado que estabelece os dados em uma ordem finita definida.
+\end_layout
+
+\end_inset
+
+ que farão uma relação entre a instituição que o docente atua e a instituição
+ a qual ele se tituolou.
+ Uma vez, que essa lista de tuplas é criada, somos capazes de passar por
+ cada tupla, comparando em tempo linear, a igualdade entre as strings.
+ Como já dito acima, essa comparação é feita por intermedio do algoritmo
+ de Levenshtein.
+ 
+\end_layout
+
+\begin_layout Standard
+A teoria da distância de Levenshtein entre duas strings, diz respeito ao
+ número de operações necessárias para transformar uma string em outra.
+ Em nossa análise, tomamos como razoável uma distância de Leveinshtein de
+ até dois.
+ Segue o algoritmo:
+\end_layout
+
+\begin_layout Standard
+A primeira parte diz respeito à importação das bibliotecas necessárias para
+ análise.
+ A 
+\emph on
+xlrd
+\emph default
+ é utilizada para importar os dados de uma planilha em excel, enquanto a
+ biblioteca 
+\emph on
+re
+\emph default
+ é responsável por tratar as soluções de tratamento de strings via expressões
+ regulares, enquanto a 
+\emph on
+Levenshtein 
+\emph default
+diz respeito à distância homonima descrita acima.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+import xlrd 
+\end_layout
+
+\begin_layout Plain Layout
+
+import re 
+\end_layout
+
+\begin_layout Plain Layout
+
+import Levenshtein 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Deixamos a segunda parte da análise para descrever como estruturamos o dado.
+ Como já descrito, buscamos as construção de uma lista de tuplas, justapondo
+ as instituições que os docentes trabalham e qual eles se titularam respectivame
+nte, de modo que a comparação de custo O(1) seja repetida n vezes, o que
+ nos traz um custo linear para análise de toda base em questão.
+ Assim, segue o exemplo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#Exemplo meramente ilustrativo.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+lst = [("UFRJ","UERJ"), ("EMAP","EBAPE"), ("PUC Rio","PUC-MG"), ("UFF","FGV"),
+ ("EBEF","EPGE"), ("UFRRJ","UFMG")]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se faz necessário mostrar como limpamos os dados na terceira parte da análise.
+ Em primeiro lugar importamos os dados de uma planilha em excel
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+A base de dados é confidencial.
+ Faz parte de um projeto de pesquisa junto à EBAPE sobre métodos de avaliação
+ da qualidade da educação Superior no Brasil.
+\end_layout
+
+\end_inset
+
+, posteriormente necessitamos de expressões regulares para limpar as strings
+ das instituições as quais os docentes se titularam pois essa parte do dado
+ veio em formatação não usual.
+ Por fim, transformamos todas as strings em maiusculas e construimos a lista
+ de tuplas como exposto no exemplo acima.
+ A descrição corresponde ao seguinte código:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#Importando e Limpando os dados do dataset
+\end_layout
+
+\begin_layout Plain Layout
+
+matematica_wb = xlrd.open_workbook("Matematica.xlsx", encoding_override =
+ "utf8" ) 
+\end_layout
+
+\begin_layout Plain Layout
+
+matematica_ws = matematica_wb.sheet_by_index(0) 
+\end_layout
+
+\begin_layout Plain Layout
+
+instituicao = matematica_ws.col(4)  
+\end_layout
+
+\begin_layout Plain Layout
+
+titulacao = matematica_ws.col(52) 
+\end_layout
+
+\begin_layout Plain Layout
+
+titulacao_IES = []  
+\end_layout
+
+\begin_layout Plain Layout
+
+cont = 0 
+\end_layout
+
+\begin_layout Plain Layout
+
+for valor in titulacao:     
+\end_layout
+
+\begin_layout Plain Layout
+
+	valor_split = re.split("/",str(valor))     
+\end_layout
+
+\begin_layout Plain Layout
+
+	titulacao_IES.append((str(instituicao[cont]).upper(),valor_split[0].upper()))
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+	cont += 1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#Iniciamos no indice 1, pois não nos interessamos no titulo.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+lst_tit_ies = titulacao_IES[1:]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A partir de agora, serão expostas as funções necessárias para verificar
+ a semelhança entre as strings, realizar a contagem entre elas, e por fim
+ verificar o número de casos de igualdade.
+ A primeira função a ser abordade será a de comparações, que nesse caso
+ será chamada de 
+\emph on
+teste_igual
+\emph default
+.
+
+\emph on
+ 
+\emph default
+A função toma dois valores, compara a distância de Levenshtein entre eles
+ e retorna o número um caso esse nível de distância seja abaixo de 2 e retorna
+ o número zero caso contrário.
+ 
+\end_layout
+
+\begin_layout Standard
+Repara-se que a função 
+\emph on
+teste_igual
+\emph default
+ é uma variação da função 
+\emph on
+compara
+\emph default
+ explicada na implementação da abordagem linear.
+ A alteração se faz necessária, pois estamos interessados em contar o casos
+ que consideramos próximos, assim, de forma recursiva vamos chamar tal função
+ para comparar e retornar tais valores que proporcionarão a capacidade de
+ contagem.
+ 
+\end_layout
+
+\begin_layout Standard
+Além disso, a complexidade dessa função é de O(1), pois toma dois valores
+ e os compara através de um argumento lógico.
+ Segue o código da função em questão.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#A variavel valor é uma tupla
+\end_layout
+
+\begin_layout Plain Layout
+
+def testa_igual(valor):     
+\end_layout
+
+\begin_layout Plain Layout
+
+	distancia_str = Levenshtein.distance(valor[0],valor[1])     
+\end_layout
+
+\begin_layout Plain Layout
+
+	if distancia_str <= 2:         
+\end_layout
+
+\begin_layout Plain Layout
+
+		return(1)     
+\end_layout
+
+\begin_layout Plain Layout
+
+	else:         
+\end_layout
+
+\begin_layout Plain Layout
+
+		return(0)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uma vez que a função 
+\emph on
+teste_igual
+\emph default
+ está definida podemos descrever a função 
+\emph on
+contagem
+\emph default
+.
+ A função contagem toma uma lista de tuplas, e chama de forma recursiva
+ suas metades de forma a otimizar a contagem do número e valores iguais
+ entre instituições de trabalho e de titulação.
+ 
+\end_layout
+
+\begin_layout Standard
+Assim, o passo base consiste em comparar através da função 
+\emph on
+teste_igual 
+\emph default
+a igualdade das tuplas e contando os valores de contagem de metade da lista
+ e os somando ao final de cada chamada.
+ 
+\end_layout
+
+\begin_layout Standard
+Dessa forma, o algoritmo retorna exatamente o número de casos em que a distância
+ de Levenshtein das strings é menor ou igual a dois para todas os docentes
+ nos anos de análise.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def contagem(lista):     
+\end_layout
+
+\begin_layout Plain Layout
+
+	if len(lista) is 0:         
+\end_layout
+
+\begin_layout Plain Layout
+
+		return(0)     
+\end_layout
+
+\begin_layout Plain Layout
+
+	if len(lista) is 1:         
+\end_layout
+
+\begin_layout Plain Layout
+
+		return(testa_igual(lista[0]))     
+\end_layout
+
+\begin_layout Plain Layout
+
+	else:         
+\end_layout
+
+\begin_layout Plain Layout
+
+		med =len(lista)//2         
+\end_layout
+
+\begin_layout Plain Layout
+
+		return(contagem(lista[:med]) + contagem(lista[med:]))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por fim, expomos a função responsãvel por receber a lista com os dados e
+ chamar as funções já explicadas anteriormente, para que com os outputs
+ das funções já explicadas, ela possa fazer a comparação entre o tamanho
+ de casos de igualdade o parâmetro de análise.
+ 
+\end_layout
+
+\begin_layout Standard
+Como já citado, buscamos comparar a incidência de casos em que há igualdade
+ de docentes com dois terços no número de docentes no pais.
+ Assim, o nosso parametro será o valor correspondente a dois terços do número
+ de observações totais.
+ Caso seja maior, retornamos o lógico 
+\emph on
+True, 
+\emph default
+responsável por designar que mais de dois terços dos professores brasileiros
+ se titularam na mesma insituição que trabalham.
+ Caso a função contagem não extrapole o parametro dado como input, o retorno
+ será o lógico 
+\emph on
+False
+\emph default
+.
+ 
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Função criada para responder a seguinte pergunta: Qual a proporcao de
+ professores nos programas de Matematica do Brasil 
+\end_layout
+
+\begin_layout Plain Layout
+
+#que se titularam e pesquisam no mesmo programa? 
+\end_layout
+
+\begin_layout Plain Layout
+
+def verifica(universidades,parametro):     
+\end_layout
+
+\begin_layout Plain Layout
+
+	if contagem(universidades) > parametro:
+\end_layout
+
+\begin_layout Plain Layout
+
+		return(True,contagem(universidades))     
+\end_layout
+
+\begin_layout Plain Layout
+
+	else:         
+\end_layout
+
+\begin_layout Plain Layout
+
+		return(False,contagem(universidades))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Conclusão
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Em resumo, busca-se através desse algortimo enfrentar um desafio real de
+ análise de dados de educação superior no Brasil.
+ A resolução em tempo linear do exercício proposto, já explicado acima,
+ serviu de inspiração para criação desse código, que nos levou a inferir
+ que 2105 docentes se titularam e trabalham no mesmo centro.
+ 
+\end_layout
+
+\begin_layout Standard
+Destaca-se que a análise é uma aproximação que pode estar levando em consideraçã
+o repetições ou deixando de tomar casos de interesse, uma vez que as strings
+ não estão expostas no mesmo formato e o dado está em painel.
+ Apesar dos desafios, foi construído um código em tempo linear O(n), que
+ retornou o lógico 
+\emph on
+False, 
+\emph default
+pois a base tem tamanho de 9322 observações.
 \end_layout
 
 \begin_layout Subsection
@@ -3299,30 +4576,46 @@ clause =[[1,-5,4],[-1,5,3,4],[-3,-2]]
 
 \begin_layout Standard
 Os métodos implementados são apresentados a seguir e cosistem de um simples
- parser da cláusula de entrada, de forma que cada operação(AND, OR E NOT)
- foi implementada como um método que pode receber um número de parâmetros
- variável, tal que os parâmetros são strings ou um valor de retorno de uma
- outra operação.
- Os métodos compõe uma classe denominada CNF que possui uma variável chamada
- 
+ parser para a fórmula de entrada.
+ Cada uma das operações (AND, OR e NOT) foi implementada como um método
+ que pode receber um número variável de parâmetros.
+ Os parâmetros são strings (literais) ou um valor de retorno de uma outra
+ operação (operação entre literais).
+ Os métodos compõe uma classe denominada CNF que possui uma atributo do
+ tipo dicionário chamada 
 \emph on
 variables 
 \emph default
-que é um dicionário que relaciona os literais fornecidos em forma de string
- com os inteiros a serem passados para o resolvedor do 
+que relaciona os literais fornecidos em forma de string com os inteiros
+ a serem passados para o resolvedor do 
 \emph on
-pycosat.
- 
+pycosat; 
+\emph default
+além disso a classe possui um atributo
+\emph on
+ clause 
+\emph default
+que armazena a f'órmula na forma de lista de inteiros (compatível com 
+\emph on
+pycosat
+\emph default
+).
 \end_layout
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "basicstyle={\small\ttfamily}"
 inline false
 status open
 
 \begin_layout Plain Layout
 
-class CNF: 	
+class CNF:
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Inicialização do dicionário de variáveis da fórmula e da fórmula	
 \end_layout
 
 \begin_layout Plain Layout
@@ -3337,17 +4630,18 @@ class CNF:
 
 \begin_layout Plain Layout
 
-	
+		self.clause = []
 \end_layout
 
 \begin_layout Plain Layout
 
-	def AND(self, *args): 		
+	#Cada parâmetro da função AND é uma dijunção de literais (lista de literais
+ retornados pela função OR)
 \end_layout
 
 \begin_layout Plain Layout
 
-		clause = [] 		
+	def AND(self, *args): 			
 \end_layout
 
 \begin_layout Plain Layout
@@ -3362,7 +4656,7 @@ class CNF:
 
 \begin_layout Plain Layout
 
-				clause.append(arg) 			
+				self.clause.append(arg) 			
 \end_layout
 
 \begin_layout Plain Layout
@@ -3377,11 +4671,19 @@ class CNF:
 
 \begin_layout Plain Layout
 
-		return clause
+		return self.clause
 \end_layout
 
 \begin_layout Plain Layout
 
+	#Cada parâmetro da função OR é uma string que corresponde a um literal
+ ou 
+\end_layout
+
+\begin_layout Plain Layout
+
+	#um inteiro (retornado pela função NOT) que corresponde ao valor negado
+ de um literal 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3396,7 +4698,12 @@ class CNF:
 
 \begin_layout Plain Layout
 
-		for arg in args: 			
+		for arg in args:
+\end_layout
+
+\begin_layout Plain Layout
+
+			#verifica se o valor é um inteiro			
 \end_layout
 
 \begin_layout Plain Layout
@@ -3411,12 +4718,22 @@ class CNF:
 
 \begin_layout Plain Layout
 
-			else: 				
+			else:
 \end_layout
 
 \begin_layout Plain Layout
 
-				if isinstance(arg, basestring): 					
+				#verifica se o parâmetro é uma string				
+\end_layout
+
+\begin_layout Plain Layout
+
+				if isinstance(arg, basestring): 
+\end_layout
+
+\begin_layout Plain Layout
+
+					#armazena a string se ela não estiver no dicionário					
 \end_layout
 
 \begin_layout Plain Layout
@@ -3451,16 +4768,27 @@ class CNF:
 
 \begin_layout Plain Layout
 
+	#Este parâmetro é uma string que corresponde a um literal 
 \end_layout
 
 \begin_layout Plain Layout
 
-	def NOT(self,variable): 		
+	def NOT(self,variable):
 \end_layout
 
 \begin_layout Plain Layout
 
-		if isinstance(variable, basestring): 			
+		#verifica se o parâmetro é uma string			
+\end_layout
+
+\begin_layout Plain Layout
+
+		if isinstance(variable, basestring): 
+\end_layout
+
+\begin_layout Plain Layout
+
+			#armazena a string se ela não estiver no dicionário				
 \end_layout
 
 \begin_layout Plain Layout
@@ -3490,6 +4818,7 @@ class CNF:
 
 \begin_layout Plain Layout
 
+	#Retorna o número de literais presentes na fórmula
 \end_layout
 
 \begin_layout Plain Layout
@@ -3530,31 +4859,49 @@ status open
 
 \begin_layout Plain Layout
 
-def reduceSatToStingySAT(cnf, clause): 	
+#recebe a instância da classe CNF criada para armazenar a fórmula de entrada
 \end_layout
 
 \begin_layout Plain Layout
 
-	return STINGYSAT(clause, cnf.NUMBER_OF_VARIABLES())
+def reduceSatToStingySAT(cnf): 	
 \end_layout
 
 \begin_layout Plain Layout
 
+  return STINGYSAT(cfn.clause, cnf.NUMBER_OF_VARIABLES())
 \end_layout
 
 \begin_layout Plain Layout
 
-def reduceStingySatToSAT(clause, k): 	
+#recebe a instância da classe CNF criada para armazenar a fórmula de entrada
 \end_layout
 
 \begin_layout Plain Layout
 
-	solutions = SAT(clause) 	
+def reduceStingySatToSAT(cnf, k): 	
 \end_layout
 
 \begin_layout Plain Layout
 
-	for solution in solutions: 		
+	solutions = SAT(cnf.clause) 
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Conta o número de variáveis verdadeir para cada valoração que satisfaz
+ a fórmula	
+\end_layout
+
+\begin_layout Plain Layout
+
+	for solution in solutions: 	
+\end_layout
+
+\begin_layout Plain Layout
+
+		#se encontra uma valoração com k variáveis verdadeiras retorna verdadeiro
+ 	
 \end_layout
 
 \begin_layout Plain Layout

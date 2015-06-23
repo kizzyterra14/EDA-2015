@@ -34,7 +34,6 @@ def quadratic(L):
 	max_subsequence.reverse()                             
 	return max_subsequence
 
-	return max(incl, excl)   
 
 
 if __name__ == '__main__':
