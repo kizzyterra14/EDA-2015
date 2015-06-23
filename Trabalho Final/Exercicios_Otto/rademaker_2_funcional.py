@@ -1,4 +1,6 @@
 lst = [1201,1308,1308,1201,1403,1308]
+
+equivalenceClasses ={}
 lst_pares = []
 
 pare = len(lst) + 1
