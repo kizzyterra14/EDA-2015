@@ -108,7 +108,7 @@ thispagestyle{empty}
 \align center
 
 \size large
-FUNDAÇÃO GETÚLIO VARGAS
+FUNDAÇÃO GETULIO VARGAS
 \end_layout
 
 \begin_layout Standard
@@ -319,12 +319,11 @@ como um modelo simplificado do problema de estimativa de padrões por máxima
 O problema original do estimador de máxima verossimilhança é na verdade
  um problema de subsequência de soma máxima bidimensional, mas foi proposto
  por Grenander em sua forma simplificada (unidimensional) visto que o problema
- bidimensional exigia mais tempo para ser resolvido.
+ bidimensional exigia muito mais tempo para ser resolvido.
  Uma solução de tempo linear para o problema unidimensional foi encontrada
  pouco tempo depois que o problema foi proposto por Jay Kadane da 
 \emph on
 Carnegie-Mellon University.
- 
 \emph default
 
 \begin_inset CommandInset citation
@@ -655,9 +654,9 @@ indent
 
 \begin_layout Standard
 A solução cúbica apresentada é claramente ineficiente e por essa razão,
- basta pensar um pouco para identificar que podemos modificá-la facilmente
- e torná-la ligeiramente melhor, isso pode ser feito apenas eliminando o
- laço 
+ basta refletir um pouco para perceber que podemos modificá-la facilmente
+ e torná-la ligeiramente melhor.
+ Isto pode ser feito com uma simples remoção do laço 
 \emph on
 for 
 \emph default
@@ -794,11 +793,18 @@ A idéia para esta implementação é utilizar a técnica de programação dinâ
 \end_layout
 
 \begin_layout Standard
-Neste contexto, a principal idéia é considerar que para cada elemento I
+Neste contexto, a principal idéia é considerar que para cada elemento 
+\emph on
+I
+\emph default
  da lista de números a solução procurada (subsequência contígua de soma
  máxima) pode ser encontrada a partir da solução calculada para o elemento
- anterior I - 1(se existir), beneficiando-se do fato de que duas somas parciais
- vizinhas computadas ao longo da execução diferem por apenas um elemento.
+ anterior 
+\emph on
+I-1
+\emph default
+(se existir), beneficiando-se do fato de que duas somas parciais vizinhas
+ computadas ao longo da execução diferem por apenas um elemento.
  
 \end_layout
 
@@ -905,14 +911,29 @@ O algoritmo inicia-se ao definir as variáveis, conforme descrito, e em seguida
 \emph on
 for 
 \emph default
-para calcular a solução do problema para cada elemento I (cada iteração
- calcula a resposta para o problema como se a lista de números terminasse
- no elemento I), para isso verifica-se qual subsequência possui maior soma:
- a subsequência composta por todos os elementos até I (
+para calcular a solução do problema para cada elemento 
+\emph on
+I
+\emph default
+ (cada iteração calcula a resposta para o problema como se a lista de números
+ terminasse no elemento 
+\emph on
+I
+\emph default
+), para isso verifica-se qual subsequência possui maior soma: a subsequência
+ composta por todos os elementos até 
+\emph on
+I
+\emph default
+ (
 \begin_inset Formula $S[I-1]\cup L[I]$
 \end_inset
 
- ) ou a subsequência que se inicia em I(
+ ) ou a subsequência que se inicia em 
+\emph on
+I
+\emph default
+ (
 \begin_inset Formula $S[I]=\{L[I]\}$
 \end_inset
 
@@ -1258,7 +1279,7 @@ Esta implementação utiliza a técnica de programação dinâmica através do
 \size footnotesize
 \begin_inset Formula 
 \[
-subseqMax(i)=max\{max\{subseqMax(k)\cup elemento(i);\,k<i\},\;elemento(i)\}
+subseqMax(i)=max\{max\{subseqMax(k)\cup elemento(i);\, k<i\},\; elemento(i)\}
 \]
 
 \end_inset
@@ -1698,9 +1719,12 @@ indent
 \end_layout
 
 \begin_layout Standard
-Nesta seção, apresentamos uma comparação dos tempos de execução obtidos
- para as diferentes implementações apresentadas até aqui, considerando diferente
-s tamanhos de entrada:
+Nesta seção apresentamos uma comparação dos tempos de execução obtidos para
+ as diferentes implementações apresentadas para diferentes tamanhos de entrada.
+ Os algoritmos foram implementados na linguagem de programação Python.
+ A execução foi realizada em uma máquina com processador 1,3 GHz Intel Core
+ i5, memória de 4 GB 1600 MHz DDR3 e sistema Operacional: OS X Yosemite
+ (10.10.3).
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1712,10 +1736,6 @@ Subsequências Contíguas
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \align center
@@ -1816,47 +1836,6 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $10^{0}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 \begin_inset Formula $10^{1}$
 \end_inset
 
@@ -1869,7 +1848,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0,014329 segundos
 \end_layout
 
 \end_inset
@@ -1878,7 +1857,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0,014370 segundos
 \end_layout
 
 \end_inset
@@ -1887,7 +1866,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0,014080 segundos
 \end_layout
 
 \end_inset
@@ -1910,7 +1889,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0,045706 segundos
 \end_layout
 
 \end_inset
@@ -1919,7 +1898,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0,017277 segundos
 \end_layout
 
 \end_inset
@@ -1928,7 +1907,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0,017037 segundos
 \end_layout
 
 \end_inset
@@ -1951,7 +1930,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+14,5 segundos
 \end_layout
 
 \end_inset
@@ -1960,7 +1939,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0,089748 segundos
 \end_layout
 
 \end_inset
@@ -1969,14 +1948,14 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0,046395 segundos
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1988,10 +1967,42 @@ N
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3,5 horas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7,71 segundos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,095831 segundos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Formula $10^{5}$
+\end_inset
+
 
 \end_layout
 
@@ -2001,7 +2012,16 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
+--
+\end_layout
 
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13,85 minutos
 \end_layout
 
 \end_inset
@@ -2010,7 +2030,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0,581422 segundos
 \end_layout
 
 \end_inset
@@ -2046,10 +2066,6 @@ Subsequências Não-Contíguas
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \align center
@@ -2106,29 +2122,6 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $10^{0}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 \begin_inset Formula $10^{1}$
 \end_inset
 
@@ -2141,7 +2134,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0,014250 segundos
 \end_layout
 
 \end_inset
@@ -2164,7 +2157,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0,018624 segundos
 \end_layout
 
 \end_inset
@@ -2187,14 +2180,14 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0,147 segundos
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2206,11 +2199,34 @@ N
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13,9 segundos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10^{5}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+24, 567 minutos
 \end_layout
 
 \end_inset
@@ -2229,10 +2245,6 @@ Tempos de execução
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -2280,7 +2292,7 @@ key "Kleinberg2005"
 
 \end_inset
 
-, capitulo 4, que aborda o tema de algoritmos gulosos, sendo o exercício
+, capítulo 4, que aborda o tema de algoritmos gulosos, sendo o exercício
  de número 7.
  Sua escolha foi pautada pelo interesse em enunciar e provar a eficiência
  de um algoritmo guloso.
@@ -2536,7 +2548,7 @@ A partir da hipótese indutiva podemos dizer que:
 \emph on
 \begin_inset Formula 
 \[
-T=P_{k+1}+F_{i-k}^{*}<P_{k+j}+F_{i-k}^{*}=T^{'},\;sendo\;j\geq1
+T=P_{k+1}+F_{i-k}^{*}<P_{k+j}+F_{i-k}^{*}=T^{'},\; sendo\; j\geq1
 \]
 
 \end_inset
@@ -4432,10 +4444,10 @@ será determinado pelo número N de literais presentes na fórmula fornecida
 \[
 \left\{ \begin{array}{c}
 (a_{1}\vee a_{2}\vee...\lor a_{n})\\
-entrada\,de\,SAT
+entrada\, de\, SAT
 \end{array}\right\} \Longleftrightarrow\left\{ \begin{array}{c}
-(a_{1}\vee a_{2}\vee...\lor a_{n}),\;inteiro\,k=n\\
-entrada\,de\,STINGY\,SAT
+(a_{1}\vee a_{2}\vee...\lor a_{n}),\; inteiro\, k=n\\
+entrada\, de\, STINGY\, SAT
 \end{array}\right\} 
 \]
 
@@ -4533,7 +4545,7 @@ do Python o qual implementa a resolução do problema SAT.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-(A\vee B\vee C)\wedge(\lnot A\vee\lnot B\vee C)\,equivale\,a\;[\,[1,2,3],\,[-1,-2,3]\,]
+(A\vee B\vee C)\wedge(\lnot A\vee\lnot B\vee C)\, equivale\, a\;[\,[1,2,3],\,[-1,-2,3]\,]
 \]
 
 \end_inset
@@ -4969,22 +4981,6 @@ Conclusão
 \end_layout
 
 \begin_layout Standard
-Em resumo, esse artigo aborda os diferentes conceitos estudados no curso
- de Estutura de Dados e Algoritmos de uma forma não convencional, pois busca-se
- a contextualização de problemas reais com a abordagem de soluções de problemas
- clássicos.
- Além disso, busca discutir problemas não tratáveis de forma criteriosa,
- de modo a explorar o tema de algoritmos desde os casos mais simples, até
- o mais complexos, sem deixar de encarar com relevância a aplicação das
- resoluções discutidas a possíveis problemas reais, como no caso do dataset
- que aborda dados de educação superior no Brasil.
- Dessa forma, a oportunidade de escolha dos exercícios nos livros citados
- na referência bibliográfica e a busca da relação entre tais exercícios
- e a aplicação prática pode ser apontada como força motriz das discussões
- vistas aqui.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -4998,6 +4994,22 @@ indent
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Em resumo, esse artigo aborda os diferentes conceitos estudados no curso
+ de Estuturas de Dados e Algoritmos de uma forma não convencional, pois
+ busca-se a contextualização de problemas reais com a abordagem de soluções
+ de problemas clássicos.
+ Além disso, busca discutir problemas não tratáveis de forma criteriosa,
+ de modo a explorar o tema de algoritmos desde os casos mais simples, até
+ o mais complexos, sem deixar de encarar com relevância a aplicação das
+ resoluções discutidas a possíveis problemas encontrados em situações reais,
+ como no caso do dataset que aborda dados de educação superior no Brasil.
+ Dessa forma, a oportunidade de escolha dos exercícios nos livros citados
+ na referência bibliográfica e a busca da relação entre tais exercícios
+ e a aplicação prática pode ser apontada como força motriz das discussões
+ vistas aqui.
 \end_layout
 
 \begin_layout Standard
