@@ -626,7 +626,7 @@ for
 encadeados e cada um deles irá iterar no máximo N vezes, em que N é o número
  de elementos da lista de números dada como entrada, portanto a complexidade
  deste algoritmo é 
-\begin_inset Formula $O(N^{3})$
+\begin_inset Formula $O(n^{3})$
 \end_inset
 
 .
@@ -751,7 +751,7 @@ Esta implementação possui dois laços
 \emph default
  encadeados e cada um será executado N vezes, no pior caso, logo a complexidade
  do algoritmo apresentado é 
-\begin_inset Formula $O(N^{2})$
+\begin_inset Formula $O(n^{2})$
 \end_inset
 
 .
@@ -1141,7 +1141,7 @@ for
  laço será executado N vezes, e, para cada iteração, irá executar um número
  constante de operações O(1).
  Portanto, a complexidade desta solução é 
-\begin_inset Formula $O(N)$
+\begin_inset Formula $O(n)$
 \end_inset
 
 .
@@ -1305,14 +1305,14 @@ Estas comparações executadas a cada iteração tornam esta solução quadráti
  uma vez que o número de comparações por iteração é (I-1) e são realizadas
  N iterações no total, onde N é o tamanho da entrada, logo a complexidade
  de tempo do algoritmo é 
-\begin_inset Formula $O(N^{2})$
+\begin_inset Formula $O(n^{2})$
 \end_inset
 
 .
  Nesta solução, a complexidade de espaço também depende do tamanho da entrada,
  uma vez que são armazenados os resultados intermediários obtidos para as
  N iterações, tornando a complexidade espacial 
-\begin_inset Formula $O(N)$
+\begin_inset Formula $O(n)$
 \end_inset
 
 .
@@ -1848,7 +1848,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-0,014329 segundos
+0.014329 segundos
 \end_layout
 
 \end_inset
@@ -1857,7 +1857,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-0,014370 segundos
+0.014370 segundos
 \end_layout
 
 \end_inset
@@ -1866,7 +1866,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-0,014080 segundos
+0.014080 segundos
 \end_layout
 
 \end_inset
@@ -1889,7 +1889,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-0,045706 segundos
+0.045706 segundos
 \end_layout
 
 \end_inset
@@ -1898,7 +1898,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-0,017277 segundos
+0.017277 segundos
 \end_layout
 
 \end_inset
@@ -1907,7 +1907,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-0,017037 segundos
+0.017037 segundos
 \end_layout
 
 \end_inset
@@ -1930,7 +1930,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-14,5 segundos
+14.5 segundos
 \end_layout
 
 \end_inset
@@ -1939,7 +1939,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-0,089748 segundos
+0.089748 segundos
 \end_layout
 
 \end_inset
@@ -1948,7 +1948,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-0,046395 segundos
+0.046395 segundos
 \end_layout
 
 \end_inset
@@ -1971,7 +1971,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-3,5 horas
+3.5 horas
 \end_layout
 
 \end_inset
@@ -1980,7 +1980,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-7,71 segundos
+7.71 segundos
 \end_layout
 
 \end_inset
@@ -1989,7 +1989,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-0,095831 segundos
+0.095831 segundos
 \end_layout
 
 \end_inset
@@ -2012,7 +2012,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
---
+---
 \end_layout
 
 \end_inset
@@ -2021,7 +2021,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-13,85 minutos
+13.85 minutos
 \end_layout
 
 \end_inset
@@ -2030,7 +2030,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-0,581422 segundos
+0,.81422 segundos
 \end_layout
 
 \end_inset
@@ -2134,7 +2134,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-0,014250 segundos
+0.014250 segundos
 \end_layout
 
 \end_inset
@@ -2157,7 +2157,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-0,018624 segundos
+0.018624 segundos
 \end_layout
 
 \end_inset
@@ -2180,7 +2180,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-0,147 segundos
+0.147 segundos
 \end_layout
 
 \end_inset
@@ -2203,7 +2203,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-13,9 segundos
+13.9 segundos
 \end_layout
 
 \end_inset
@@ -2226,7 +2226,7 @@ N
 \begin_inset Text
 
 \begin_layout Plain Layout
-24, 567 minutos
+24.567 minutos
 \end_layout
 
 \end_inset
@@ -2848,8 +2848,11 @@ merge
 mergesort_inverse 
 \emph default
 da metade das listas.
- Esse argumento possui complexidade da ordem de O(nlogn) e retorna os tempos
- dos jobs dos PCs em ordem decrescente.
+ Esse argumento possui complexidade da ordem de 
+\begin_inset Formula $O(n\, log\, n)$
+\end_inset
+
+ e retorna os tempos dos jobs dos PCs em ordem decrescente.
 \end_layout
 
 \begin_layout Standard
@@ -2932,7 +2935,11 @@ Destaca-se que esse problema teve sua escolha aclamada por abordar conceitos
 \begin_layout Standard
 Ao concluir a prova de otimalidade, é fácil ver que a implementação se resume
  ao ordenamento dos dados de input, o que nos leva à luz da implementação
- de um Mergesort modificado de custo O(nlogn) de complexidade.
+ de um Mergesort modificado de custo 
+\begin_inset Formula $O(n\, log\, n)$
+\end_inset
+
+ de complexidade.
  
 \end_layout
 
@@ -3657,8 +3664,10 @@ Surgiu o desafio de analisar um dataset que apresenta dados de docentes
  no mesmo centro que se titularam.
  Essa pergunta é pertinente pois existe uma recomendação da CAPES de que
  a proporção de professores que se titularam e são pesquisadores de um dado
- programa não seja maior que dois terços do quadro.
- 
+ programa não seja maior que um determinado parâmetro que varia para cada
+ área de pesquisa.
+ Aqui, vamos considerar este parâmetro igual a dois terços do tamanho total
+ do dataset.
 \end_layout
 
 \begin_layout Standard
@@ -3666,7 +3675,7 @@ Dessa forma, acionamos uma base de dados que nos apresenta as instituições
  as quais os docentes se titularam, e os centros que os mesmos trabalharam
  entre 2004 e 2012.
  Nosso desafio foi comparar os casos, verificar a igualdade entre eles e
- reportar se o numero de docentes nos programas de matemática no Brasil
+ reportar se o número de docentes nos programas de matemática no Brasil
  violam a regra.
  Lançamos mão de analisar instituicão por instituição por fugir do escopo
  da análise, isto é, da contextualização entre o exercicio proposto pelo
@@ -3688,12 +3697,16 @@ Um dos desafios da base está no fato de que as strings que correspondem
 No entanto, comparada à abordagem linear exposta acima, o fato de o dataset
  apresentar as respectivas instituições em que os professores atuam nos
  anos de análise já casadas com as instituições de titulação facilita a
- análise.
+ estruturação do algoritmo.
  Dito de outra forma, não existem pares desencontrados, ou valores ímpares
  de características de um mesmo docente, pois cada linha corresponde a um
  docente diferente e busca-se encontrar o número de semelhanças sobre um
- determinado critério.
- 
+ determinado critério; por essa razão, a função 
+\emph on
+contagem
+\emph default
+ - apresentada na implementação da abordagem linear - será revisitada e
+ simplificada.
 \end_layout
 
 \begin_layout Standard
@@ -4048,20 +4061,11 @@ teste_igual
 contagem
 \emph default
 .
- A função contagem toma uma lista de tuplas, e chama de forma recursiva
- suas metades de forma a otimizar a contagem do número e valores iguais
+ A função contagem toma uma lista de tuplas, e itera sobre cada elemento
+ dessa lista de forma a otimizar a contagem do número de valores iguais
  entre instituições de trabalho e de titulação.
- 
-\end_layout
-
-\begin_layout Standard
-Assim, o passo base consiste em comparar através da função 
-\emph on
-teste_igual 
-\emph default
-a igualdade das tuplas e contando os valores de contagem de metade da lista
- e os somando ao final de cada chamada.
- 
+ Essa simplificação é possível em decorrência da maneira com que os dados
+ dos dataset estão estruturados.
 \end_layout
 
 \begin_layout Standard
@@ -4200,7 +4204,11 @@ Destaca-se que a análise é uma aproximação que pode estar levando em conside
 o repetições ou deixando de tomar casos de interesse, uma vez que as strings
  não estão expostas no mesmo formato e o dado está em painel.
  Apesar dos desafios, foi construído um código em tempo de complexidade
- O(n), que retornou o lógico 
+ 
+\begin_inset Formula $O(n)$
+\end_inset
+
+, que retornou o lógico 
 \emph on
 False, 
 \emph default
